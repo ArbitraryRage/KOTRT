@@ -165,7 +165,7 @@ public class EntityFarmer extends EntityKingdomBase {
 	}
 	
 	@Override
-	public void writeToNBT(NBTTagCompound nbt) {
+	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		nbt.setString("BuildingName", this.BuildingName);
 		nbt.setString("JobName", this.Job);
 		nbt.setBoolean("StartJob", this.StartJob);
@@ -202,7 +202,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		
 		
 		
-		super.writeToNBT(nbt);
+		return super.writeToNBT(nbt);
 	}
 	
 	

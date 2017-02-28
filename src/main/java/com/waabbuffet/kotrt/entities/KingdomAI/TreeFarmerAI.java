@@ -12,7 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class TreeFarmerAI extends EntityAIBase {
@@ -53,9 +53,9 @@ public class TreeFarmerAI extends EntityAIBase {
 		if(this.DirtBlocks.size() == 0)
 		{
 		
-			int SaplingIndex = this.isItemInTileInv(new ItemStack(Blocks.sapling), false);
+			int SaplingIndex = this.isItemInTileInv(new ItemStack(Blocks.SAPLING), false);
 			
-			if(SaplingIndex != -1 || this.isInFarmerInv(new ItemStack(Blocks.sapling)))
+			if(SaplingIndex != -1 || this.isInFarmerInv(new ItemStack(Blocks.SAPLING)))
 			{
 				
 				for(int x = 0; x < 5; x ++)
@@ -109,9 +109,9 @@ public class TreeFarmerAI extends EntityAIBase {
 			if(this.HarvestBlocks.size() == 0)
 			{
 			
-				int IronAxeIndex = this.isItemInTileInv(new ItemStack(Items.iron_axe), false);
+				int IronAxeIndex = this.isItemInTileInv(new ItemStack(Items.IRON_AXE), false);
 				
-				if(IronAxeIndex != -1 || this.isInFarmerInv(new ItemStack(Items.iron_axe)))
+				if(IronAxeIndex != -1 || this.isInFarmerInv(new ItemStack(Items.IRON_AXE)))
 				{
 					for(int y = 0; y < 18; y ++)
 					{
@@ -122,7 +122,7 @@ public class TreeFarmerAI extends EntityAIBase {
 								BlockPos B1 = new BlockPos(this.Farmer.getWorkPlace().getX() + x,  this.Farmer.getWorkPlace().getY() + y, this.Farmer.getWorkPlace().getZ() + z);
 							
 								
-									if(World.getBlockState(B1).equals(Blocks.log.getDefaultState()))
+									if(World.getBlockState(B1).equals(Blocks.LOG.getDefaultState()))
 									{
 										
 										if(!this.AlreadyInsideList(B1, this.HarvestBlocks))
@@ -205,7 +205,7 @@ public class TreeFarmerAI extends EntityAIBase {
 		if(this.DirtMode)
 		 {
 			
-			 if(this.isItemInTileInv(new ItemStack(Blocks.sapling), false) != -1){
+			 if(this.isItemInTileInv(new ItemStack(Blocks.SAPLING), false) != -1){
 				 if(this.DirtBlocks.size() != 0)
 				 {
 				
@@ -229,12 +229,12 @@ public class TreeFarmerAI extends EntityAIBase {
 										
 									
 										this.getTE().inventory[j].stackSize--;
-										World.setBlockState(DirtBlocks.get(ListIndex).up(), Blocks.sapling.getDefaultState());
+										World.setBlockState(DirtBlocks.get(ListIndex).up(), Blocks.SAPLING.getDefaultState());
 										
 										
 									}else{
 										this.getTE().inventory[j] = null;
-										World.setBlockState(DirtBlocks.get(ListIndex).up(), Blocks.sapling.getDefaultState());
+										World.setBlockState(DirtBlocks.get(ListIndex).up(), Blocks.SAPLING.getDefaultState());
 									}
 									 
 								
@@ -278,7 +278,7 @@ public class TreeFarmerAI extends EntityAIBase {
 		if(this.HarvestMode)
 		{
 			boolean PlaceLog = true, PlaceSapling = false, PlaceApple = false;
-			if(!this.isInFarmerInv(new ItemStack(Items.iron_axe)))
+			if(!this.isInFarmerInv(new ItemStack(Items.IRON_AXE)))
 			{ 
 				
 				 for(int i = 0; i < this.Farmer.getInventory().length; i ++)
@@ -286,7 +286,7 @@ public class TreeFarmerAI extends EntityAIBase {
 					 if(this.Farmer.getInventory()[i] == null)
 					 {
 						
-						int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.iron_axe), false);
+						int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.IRON_AXE), false);
 						
 						if( HasOrNaw != -1)
 						{
@@ -308,7 +308,7 @@ public class TreeFarmerAI extends EntityAIBase {
 				 }
 			}
 			
-			 if(this.isInFarmerInv(new ItemStack(Items.iron_axe)))
+			 if(this.isInFarmerInv(new ItemStack(Items.IRON_AXE)))
 			 {
 				 if(this.HarvestBlocks.size() != 0)
 				 {
@@ -333,7 +333,7 @@ public class TreeFarmerAI extends EntityAIBase {
 									 {
 										 if(this.Farmer.getInventory()[j1] != null)
 										 {
-											 if(this.Farmer.getInventory()[j1].isItemEqual(new ItemStack(Items.iron_axe)))
+											 if(this.Farmer.getInventory()[j1].isItemEqual(new ItemStack(Items.IRON_AXE)))
 											 {
 												 this.Farmer.getInventory()[j1].setItemDamage(this.Farmer.getInventory()[j1].getItemDamage() + 1);
 												
@@ -347,7 +347,7 @@ public class TreeFarmerAI extends EntityAIBase {
 									 {
 										 if(this.getTE().inventory[k] != null)
 										 {
-											if(this.getTE().inventory[k].isItemEqual(new ItemStack(Blocks.log)))
+											if(this.getTE().inventory[k].isItemEqual(new ItemStack(Blocks.LOG)))
 											{
 												if(this.getTE().inventory[k].stackSize < 64)
 												{
@@ -368,7 +368,7 @@ public class TreeFarmerAI extends EntityAIBase {
 											 if(this.getTE().inventory[m] != null)
 											 {
 												 
-												if(this.getTE().inventory[m].isItemEqual(new ItemStack(Blocks.sapling)))
+												if(this.getTE().inventory[m].isItemEqual(new ItemStack(Blocks.SAPLING)))
 												{
 													if(this.getTE().inventory[m].stackSize < 62)
 													{	
@@ -420,7 +420,7 @@ public class TreeFarmerAI extends EntityAIBase {
 								 {
 									 if(this.getTE().inventory[j2] == null)
 									 {
-										 this.getTE().inventory[j2] = new ItemStack(Blocks.log);
+										 this.getTE().inventory[j2] = new ItemStack(Blocks.LOG);
 										 PlaceLog = false;
 										 break;
 									 }
@@ -434,7 +434,7 @@ public class TreeFarmerAI extends EntityAIBase {
 								 {
 									 if(this.getTE().inventory[j3] == null)
 									 {
-										this.getTE().inventory[j3] = new ItemStack(Blocks.sapling);
+										this.getTE().inventory[j3] = new ItemStack(Blocks.SAPLING);
 										this.getTE().inventory[j3].stackSize += 2;
 										PlaceSapling = false;
 										break;

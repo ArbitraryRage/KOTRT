@@ -24,11 +24,11 @@ public class EntityCathedral extends EntityTameable{
 	
 	
 	@Override
-	public void writeToNBT(NBTTagCompound tagCompund) {
+	public NBTTagCompound writeToNBT(NBTTagCompound tagCompund) {
 		
 		tagCompund.setInteger("StoredXP", this.StoredXP);
 		
-		super.writeToNBT(tagCompund);
+		return super.writeToNBT(tagCompund);
 	}
 	
 	public int getStoredXP() {

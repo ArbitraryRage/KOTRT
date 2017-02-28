@@ -11,8 +11,8 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIArrowAttack;
-import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
+import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -33,6 +33,7 @@ import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -42,8 +43,8 @@ import net.minecraft.world.World;
 
 public class EntityOutpostBase extends EntityTameable implements IRangedAttackMob{
 	
-	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, 1.2D, 20, 20, 15.0F);
-    private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(this, 1.2D, false);
+	private EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow(this, 1.2D, 20, 20, 15.0F);
+    private EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
 	
 	private int KingdomID, KingdomStructureID, QuestID, SingleReputation, QuestTimer, QuestObjectiveTracker;
 	private String VillagerName;
@@ -127,11 +128,11 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 		{
 			if(villagerSkinID == 14)
 			{
-				this.setCurrentItemOrArmor(0, new ItemStack(Items.bow));
+				this.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
 				this.tasks.addTask(4, this.aiArrowAttack);
 			}else{
 				
-				this.setCurrentItemOrArmor(0, new ItemStack(Items.golden_sword));
+				this.setCurrentItemOrArmor(0, new ItemStack(Items.GOLDEN_SWORD));
 				this.tasks.addTask(4, this.aiAttackOnCollide);
 			}
 			
@@ -153,7 +154,7 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 	protected void applyEntityAttributes()
 	    {
 	        super.applyEntityAttributes();
-	        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
+	        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.50D);
 	        
 	    }
 	
@@ -498,17 +499,17 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 		case 1:
 			//Gather 16 furnaces
 			
-			b = new QuestFormat(1, new ItemStack(Blocks.furnace, 16));
+			b = new QuestFormat(1, new ItemStack(Blocks.FURNACE, 16));
 			break;
 		case 2:
 			//Gather 16 Bricks
 		
-			b = new QuestFormat(1, new ItemStack(Blocks.brick_block, 16 ));
+			b = new QuestFormat(1, new ItemStack(Blocks.BRICK_BLOCK, 16 ));
 			break;
 		case 3:
 			//Gather 16 glass
 			
-			b = new QuestFormat(0, new ItemStack(Blocks.glass, 16));
+			b = new QuestFormat(0, new ItemStack(Blocks.GLASS, 16));
 			break;
 		case 4:
 			//Kill 15 zombies
@@ -533,19 +534,19 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 			break;
 		case 9:
 			//Deliver cake to skeleton
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.cake));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.CAKE));
 			break;
 		case 10:
 			//Deliver 16 Fish to Villager
-			b = new QuestFormat(4, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.fish, 8));
+			b = new QuestFormat(4, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.FISH, 8));
 			break;
 		case 11:
 			//Deliver 16 Iron to Villager
-			b = new QuestFormat(3, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.iron_ore, 16));
+			b = new QuestFormat(3, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.IRON_ORE, 16));
 			break;
 		case 12:
 			//Deliver 1 Mushroom soup to Villager
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.mushroom_stew, 1));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.MUSHROOM_STEW, 1));
 			break;
 		case 13:
 			//Deliver 16 Piston to Villager
@@ -600,59 +601,59 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 			break;
 		case 24:
 			//Gather 16 Furnaces
-			b = new QuestFormat(4, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.furnace, 16));
+			b = new QuestFormat(4, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.FURNACE, 16));
 			break;
 		case 25:
 			//Gather 16 bookshelf
-			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.bookshelf, 16));
+			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.BOOKSHELF, 16));
 			break;
 		case 26:
 			//Gather 16 Cactus
-			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.cactus, 16));
+			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.CACTUS, 16));
 			break;
 		case 27:
 			//Gather 16 Tnt
-			b = new QuestFormat(2, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.tnt, 16));
+			b = new QuestFormat(2, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.TNT, 16));
 			break;
 		case 28:
 			//Gather 16 Slimes
-			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.lapis_block, 8));
+			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.LAPIS_BLOCK, 8));
 			break;
 		case 29:
 			//Gather 16 Blaze Rods
-			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.redstone_block, 8));
+			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.REDSTONE_BLOCK, 8));
 			break;
 		case 30:
 			//Gather 8 Ender Pearls
-			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Items.ender_pearl, 8));
+			b = new QuestFormat(3, 1, new EntityGhast(this.worldObj), new ItemStack(Items.ENDER_PEARL, 8));
 			break;
 		case 31:
 			//Gather 16 dand
-			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.yellow_flower, 16));
+			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.YELLOW_FLOWER, 16));
 			break;
 		case 32:
 			//Gather 16 rose
-			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.red_flower, 16));
+			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.RED_FLOWER, 16));
 			break;
 		case 33:
 			//Deliver
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.cooked_porkchop, 16));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.COOKED_PORKCHOP, 16));
 			break;
 		case 34:
 			//Gather cooked beef
-			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Items.cooked_beef, 16));
+			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Items.COOKED_BEEF, 16));
 			break;
 		case 35:
 			//Gather 16 reeds
-			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Items.reeds, 16));
+			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Items.REEDS, 16));
 			break;
 		case 36:
 			//Gather cooked beef
-			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.red_mushroom, 16));
+			b = new QuestFormat(1, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.RED_MUSHROOM, 16));
 			break;
 		case 37:
 			//Gather 64 leaves
-			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.leaves, 64));
+			b = new QuestFormat(0, 1, new EntityGhast(this.worldObj), new ItemStack(Blocks.LEAVES, 64));
 			break;
 				
 		}
@@ -769,17 +770,17 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 			
 				if(this.getVillagerSkinID() == 14)
 				{
-					this.setCurrentItemOrArmor(0, new ItemStack(Items.bow));
+					this.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
 					this.tasks.addTask(4, this.aiArrowAttack);
 				}else{
 				
-					this.setCurrentItemOrArmor(0, new ItemStack(Items.golden_sword));
+					this.setCurrentItemOrArmor(0, new ItemStack(Items.GOLDEN_SWORD));
 					this.tasks.addTask(4, this.aiAttackOnCollide);
 				}
-				this.setCurrentItemOrArmor(1, new ItemStack(Items.leather_boots));
-				this.setCurrentItemOrArmor(2, new ItemStack(Items.iron_leggings));
-				this.setCurrentItemOrArmor(3, new ItemStack(Items.iron_chestplate));
-				this.setCurrentItemOrArmor(4, new ItemStack(Items.iron_helmet));
+				this.setCurrentItemOrArmor(1, new ItemStack(Items.LEATHER_BOOTS));
+				this.setCurrentItemOrArmor(2, new ItemStack(Items.IRON_LEGGINGS));
+				this.setCurrentItemOrArmor(3, new ItemStack(Items.IRON_CHESTPLATE));
+				this.setCurrentItemOrArmor(4, new ItemStack(Items.IRON_HELMET));
 				
 		        
 		        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntitySpider.class, true));
@@ -873,8 +874,8 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 	 public void attackEntityWithRangedAttack(EntityLivingBase p_82196_1_, float p_82196_2_)
 	    {
 	        EntityArrow entityarrow = new EntityArrow(this.worldObj, this, p_82196_1_, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
-	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, this.getHeldItem());
-	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, this.getHeldItem());
+	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, this.getHeldItem(swingingHand));
+	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, this.getHeldItem(swingingHand));
 	        entityarrow.setDamage((double) 5.0);
 
 	        if (i > 0)
@@ -887,7 +888,7 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 	            entityarrow.setKnockbackStrength(j);
 	        }
 
-	        if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0)
+	        if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, this.getHeldItem(swingingHand)) > 0)
 	        {
 	            entityarrow.setFire(100);
 	        }

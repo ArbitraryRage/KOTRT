@@ -27,10 +27,10 @@ public class GuiGoldCurrency extends GuiScreen {
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void Gui(RenderGameOverlayEvent.Post event) {
 		
-		if(event.type == ElementType.EXPERIENCE)
+		if(event.getType() == ElementType.EXPERIENCE)
 		{
 			EntityPlayer Player = Minecraft.getMinecraft().thePlayer;
-			ScaledResolution Resolution = event.resolution;
+			ScaledResolution Resolution = event.getResolution();
 			
 			int guiX = (Resolution.getScaledWidth() + 8)/2;
 			int guiY = (Resolution.getScaledHeight() + 8)/2;

@@ -7,8 +7,8 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIArrowAttack;
-import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
+import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -19,6 +19,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
@@ -26,7 +27,7 @@ import net.minecraft.world.World;
 
 public class EntityBarracksHunter extends EntityTameable implements IRangedAttackMob
 {
-    private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, 0.6D, 20, 20, 15.0F);
+    private EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow((Entity)this, 0.6D, 20, 20, 15.0F);
   
     
     private static final String __OBFID = "CL_00001697";
@@ -45,7 +46,7 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
 	    this.targetTasks.addTask(5, new EntityAIHurtByTarget(this, false));
 	      
 	    
-	    this.setCurrentItemOrArmor(0, new ItemStack(Items.bow));
+	    this.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
         this.tasks.addTask(4, this.aiArrowAttack);
         
         
@@ -57,7 +58,7 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
     protected void applyEntityAttributes()
     {
         super.applyEntityAttributes();
-        this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.50D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.50D);
     }
 
     protected void entityInit()
@@ -111,8 +112,8 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
 	 public void attackEntityWithRangedAttack(EntityLivingBase p_82196_1_, float p_82196_2_)
 	    {
 	        EntityArrow entityarrow = new EntityArrow(this.worldObj, this, p_82196_1_, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
-	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantment.power.effectId, this.getHeldItem());
-	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantment.punch.effectId, this.getHeldItem());
+	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, this.getHeldItem(swingingHand));
+	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, this.getHeldItem(swingingHand));
 	        entityarrow.setDamage((double) 5.0);
 
 	        if (i > 0)
@@ -125,12 +126,12 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
 	            entityarrow.setKnockbackStrength(j);
 	        }
 
-	        if (EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0)
+	        if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, this.getHeldItem(swingingHand)) > 0)
 	        {
 	            entityarrow.setFire(100);
 	        }
 
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+	        //this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 	        this.worldObj.spawnEntityInWorld(entityarrow);
 	    }
 }

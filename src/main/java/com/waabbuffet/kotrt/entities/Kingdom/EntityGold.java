@@ -90,7 +90,7 @@ public class EntityGold extends Entity{
 				
 				if (!this.isSilent())
 	            {
-	                   this.worldObj.playSoundAtEntity(entityIn, "random.pop", 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+	            //idk how to fix       this.worldObj.playSoundAtEntity(entityIn, "random.pop", 0.2F, ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
 	            }
 				this.setDead();
 			}

@@ -77,7 +77,7 @@ public class EntityRecruiter extends EntityTameable {
 
 	
 	@Override
-	public void writeToNBT(NBTTagCompound tagCompund) {
+	public NBTTagCompound writeToNBT(NBTTagCompound tagCompund) {
 		// TODO Auto-generated method stub
 		
 		tagCompund.setInteger("RecruitTime", this.getRecruitTime());
@@ -85,7 +85,7 @@ public class EntityRecruiter extends EntityTameable {
 		tagCompund.setDouble("ChanceToRecruit", this.getChanceToRecruit());
 		tagCompund.setBoolean("Recruit", this.Recruit);
 		
-		super.writeToNBT(tagCompund);
+		return super.writeToNBT(tagCompund);
 	}
 	
 	

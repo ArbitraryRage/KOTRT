@@ -16,12 +16,12 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.IChatComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.ITickable;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.World;
@@ -57,11 +57,11 @@ public class TileEntityKingdomStructureBlock extends TileEntity implements IInve
 
     	NBTTagCompound tagCompound = new NBTTagCompound();
     	this.writeToNBT(tagCompound);
-    	return new S35PacketUpdateTileEntity(this.getPos(), 1, tagCompound);
+    	return new SPacketUpdateTileEntity(this.getPos(), 1, tagCompound);
     }
 
     @Override
-    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
     	//Debug
     //	System.out.println("[DEBUG]:Client recived tile sync packet");
 
@@ -99,8 +99,8 @@ public class TileEntityKingdomStructureBlock extends TileEntity implements IInve
     }
 
     @Override
-    public IChatComponent getDisplayName() {
-        return this.hasCustomName() ? new ChatComponentText(this.getName()) : new ChatComponentTranslation(this.getName());
+    public ITextComponent getDisplayName() {
+        return this.hasCustomName() ? new TextComponentString(this.getName()) : new TextComponentTranslation(this.getName());
     }
 
 	@Override

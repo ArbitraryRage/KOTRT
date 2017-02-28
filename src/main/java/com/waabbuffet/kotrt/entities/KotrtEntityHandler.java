@@ -34,7 +34,7 @@ public class KotrtEntityHandler {
 		EntityRegistry.registerModEntity(EntityClass, Name, EntityID, KnightsOfTheRoundTable.instance, 80, 3, true);
 		
 		if(!Name.contains("KingdomGold") && !Name.contains("MagicBolt"))
-			EntityList.entityEggs.put(Integer.valueOf(EntityID), new EntityList.EntityEggInfo(EntityID, MainColour, SubColour));
+			EntityList.ENTITY_EGGS.put(Integer.valueOf(EntityID), new EntityList.EntityEggInfo(EntityID, MainColour, SubColour));
 	}
 	
 	

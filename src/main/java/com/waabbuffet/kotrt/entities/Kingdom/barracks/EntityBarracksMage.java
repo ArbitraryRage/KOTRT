@@ -14,9 +14,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.BlockPos;
+import net.minecraft.potion.PotionType;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Vec3;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class EntityBarracksMage extends EntityTameable{
@@ -73,18 +74,17 @@ public class EntityBarracksMage extends EntityTameable{
 					if(this.AttackCD == 0)
 					{
 					//	this.getOwner().getLastAttacker().setVelocity(0.0, 1.2, 0.0); save this for someone else
-						this.getOwner().getLastAttacker().addPotionEffect((new PotionEffect(Potion.moveSlowdown.getId(), 80, 4)));
 						
 						//parent entity = ghast = this
 						//entitylivingbase = target
 						  EntityLivingBase entitylivingbase = this.getOwner().getLastAttacker();
 						
 							double d1 = 4.0D;
-	                        Vec3 vec3 = this.getLook(1.0F);
+	                        Vec3d vec3 = this.getLook(1.0F);
 	                        double d2 = entitylivingbase.posX - (this.posX + vec3.xCoord * d1);
 	                        double d3 = entitylivingbase.getEntityBoundingBox().minY + (double)(entitylivingbase.height / 2.0F) - (0.5D + this.posY + (double)(this.height / 2.0F));
 	                        double d4 = entitylivingbase.posZ - (this.posZ + vec3.zCoord * d1);
-	                        world.playAuxSFXAtEntity((EntityPlayer)null, 1008, new BlockPos(this), 0);
+	                        world.playEvent((EntityPlayer)null, 1008, new BlockPos(this), 0);
 	                        EntityMagicBolt entitylargefireball = new EntityMagicBolt(world, this, d2, d3, d4);
 	                    
 	                        

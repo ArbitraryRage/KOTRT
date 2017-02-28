@@ -9,7 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 
@@ -61,9 +61,9 @@ public class WheatFarmerAI extends EntityAIBase {
 		if(this.HoeBlocks.size() == 0)
 		{
 		
-			int IronHoeIndex = this.isItemInTileInv(new ItemStack(Items.iron_hoe), false);
+			int IronHoeIndex = this.isItemInTileInv(new ItemStack(Items.IRON_HOE), false);
 			
-			if(IronHoeIndex != -1 || this.isInFarmerInv(new ItemStack(Items.iron_hoe)))
+			if(IronHoeIndex != -1 || this.isInFarmerInv(new ItemStack(Items.IRON_HOE)))
 			{
 				
 				for(int x = 0; x < 5; x ++)
@@ -287,15 +287,15 @@ public class WheatFarmerAI extends EntityAIBase {
 		 if(this.HoeMode)
 		 {
 			
-			if(!this.isInFarmerInv(new ItemStack(Items.iron_hoe)))
+			if(!this.isInFarmerInv(new ItemStack(Items.IRON_HOE)))
 			{ 
 				
 				 for(int i = 0; i < this.Farmer.getInventory().length; i ++)
 				 {
 					 if(this.Farmer.getInventory()[i] == null)
 					 {
-						// this.Farmer.getInventory()[i] = this.getTE().inventory[this.isItemInTileInv(new ItemStack(Items.iron_hoe), true)];
-						int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.iron_hoe), false);
+						// this.Farmer.getInventory()[i] = this.getTE().inventory[this.isItemInTileInv(new ItemStack(Items.IRON_HOE), true)];
+						int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.IRON_HOE), false);
 						
 						if( HasOrNaw != -1)
 						{
@@ -306,7 +306,7 @@ public class WheatFarmerAI extends EntityAIBase {
 							 
 							 
 							 this.getTE().inventory[HasOrNaw] = null;	 
-							 this.Farmer.setCurrentItemOrArmor(0, new ItemStack(Items.iron_hoe));
+							 this.Farmer.setCurrentItemOrArmor(0, new ItemStack(Items.IRON_HOE));
 						}
 						
 					     
@@ -315,7 +315,7 @@ public class WheatFarmerAI extends EntityAIBase {
 				 }
 			}
 			
-			 if(this.isInFarmerInv(new ItemStack(Items.iron_hoe))){
+			 if(this.isInFarmerInv(new ItemStack(Items.IRON_HOE))){
 				 if(this.HoeBlocks.size() != 0)
 				 {
 					 
@@ -334,7 +334,7 @@ public class WheatFarmerAI extends EntityAIBase {
 							 
 						 }
 						 this.Farmer.getNavigator().tryMoveToXYZ(HoeBlocks.get(ListIndex).getX() + 2, HoeBlocks.get(ListIndex).getY(), HoeBlocks.get(ListIndex).getZ() + 1, 1.0D);
-						 World.setBlockState(HoeBlocks.get(ListIndex), Blocks.farmland.getDefaultState());
+						 World.setBlockState(HoeBlocks.get(ListIndex), Blocks.FARMLAND.getDefaultState());
 						 
 						
 						 
@@ -342,7 +342,7 @@ public class WheatFarmerAI extends EntityAIBase {
 						 {
 							 if(this.Farmer.getInventory()[j] != null)
 							 {
-								 if(this.Farmer.getInventory()[j].isItemEqual(new ItemStack(Items.iron_hoe)))
+								 if(this.Farmer.getInventory()[j].isItemEqual(new ItemStack(Items.IRON_HOE)))
 								 {
 									 this.Farmer.getInventory()[j].setItemDamage(this.Farmer.getInventory()[j].getItemDamage() + 1);
 									

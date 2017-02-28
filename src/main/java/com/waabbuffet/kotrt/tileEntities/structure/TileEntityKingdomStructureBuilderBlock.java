@@ -18,10 +18,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.IChatComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.ITickable;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.World;
@@ -109,8 +109,8 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 	}
 
 	@Override
-	public IChatComponent getDisplayName() {
-		return this.hasCustomName() ? new ChatComponentText(this.getName()) : new ChatComponentTranslation(this.getName());
+	public ITextComponent getDisplayName() {
+		return this.hasCustomName() ? new TextComponentString(this.getName()) : new TextComponentTranslation(this.getName());
 	}
 
 	@Override
@@ -588,30 +588,30 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 
 
 
-							if(this.MaterialList1.get(j).Blockerino.getBlock() != Blocks.torch)
+							if(this.MaterialList1.get(j).Blockerino.getBlock() != Blocks.TORCH)
 								PacketHandler.INSTANCE.sendToServer(new ReduceStackSizeFromTE(this.pos.getX(), this.pos.getY(), this.pos.getZ(), i));
 
 							return CurrentBlockIndex;
 						}
 					}else if(this.MaterialList1.get(j).Blockerino.toString().contains("water")){
 
-						if(this.inventory[i].isItemEqual(new ItemStack(Items.water_bucket)))
+						if(this.inventory[i].isItemEqual(new ItemStack(Items.WATER_BUCKET)))
 						{
 							//give back bucket though
 							this.CurrentBlockIndex = j;
 							this.decrStackSize(i, 1);
-							this.setInventorySlotContents(i, new ItemStack(Items.bucket));
+							this.setInventorySlotContents(i, new ItemStack(Items.BUCKET));
 							this.MaterialList1.get(j).TotalNumberOfBlock--;
 							return CurrentBlockIndex;
 						}
 					}else if(this.MaterialList1.get(j).Blockerino.toString().contains("lava")){
 
-						if(this.inventory[i].isItemEqual(new ItemStack(Items.lava_bucket)))
+						if(this.inventory[i].isItemEqual(new ItemStack(Items.LAVA_BUCKET)))
 						{
 							//give back bucket though
 							this.CurrentBlockIndex = j;
 							this.decrStackSize(i, 1);
-							this.setInventorySlotContents(i, new ItemStack(Items.bucket));
+							this.setInventorySlotContents(i, new ItemStack(Items.BUCKET));
 							this.MaterialList1.get(j).TotalNumberOfBlock--;
 							return CurrentBlockIndex;
 						}
@@ -769,11 +769,11 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 			PacketHandler.INSTANCE.sendToAll(new UpdateMaterialList(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), item));
 		}else if(state.toString().contains("water"))		
 		{
-			ItemStack item = new ItemStack(Items.water_bucket);
+			ItemStack item = new ItemStack(Items.WATER_BUCKET);
 			PacketHandler.INSTANCE.sendToAll(new UpdateMaterialList(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), item));
 		}else if(state.toString().contains("lava"))		
 		{
-			ItemStack item = new ItemStack(Items.lava_bucket);
+			ItemStack item = new ItemStack(Items.LAVA_BUCKET);
 			PacketHandler.INSTANCE.sendToAll(new UpdateMaterialList(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), item));
 		}
 
@@ -1045,7 +1045,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 							if(item != -1)
 							{
 
-								if(this.MaterialList1.get(item).Blockerino.getBlock().equals(Blocks.torch))
+								if(this.MaterialList1.get(item).Blockerino.getBlock().equals(Blocks.TORCH))
 								{
 									if(!this.CanPlaceTorch(item))
 									{

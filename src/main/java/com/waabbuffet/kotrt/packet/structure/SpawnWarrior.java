@@ -51,9 +51,9 @@ public class SpawnWarrior implements IMessage, IMessageHandler<SpawnWarrior, IMe
 				
 			
 					b.setPosition(message.blockX, message.blockY, message.blockZ);
-					b.setCurrentItemOrArmor(0, new ItemStack(Items.golden_sword));
+					b.setCurrentItemOrArmor(0, new ItemStack(Items.GOLDEN_SWORD));
 					
-				    b.setCurrentItemOrArmor(1, new ItemStack(Items.leather_boots));
+				    b.setCurrentItemOrArmor(1, new ItemStack(Items.LEATHER_BOOTS));
 				    
 					
 					
@@ -77,8 +77,8 @@ public class SpawnWarrior implements IMessage, IMessageHandler<SpawnWarrior, IMe
 				
 			
 					b.setPosition(message.blockX, message.blockY, message.blockZ);
-					b.setCurrentItemOrArmor(0, new ItemStack(Items.bow));
-				    b.setCurrentItemOrArmor(1, new ItemStack(Items.leather_boots));
+					b.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
+				    b.setCurrentItemOrArmor(1, new ItemStack(Items.LEATHER_BOOTS));
 					
 					
 				    b.setOwnerId(ctx.getServerHandler().playerEntity.getUniqueID().toString());
@@ -104,7 +104,7 @@ public class SpawnWarrior implements IMessage, IMessageHandler<SpawnWarrior, IMe
 			
 					b.setPosition(message.blockX, message.blockY, message.blockZ);
 				
-				    b.setCurrentItemOrArmor(1, new ItemStack(Items.leather_boots));
+				    b.setCurrentItemOrArmor(1, new ItemStack(Items.LEATHER_BOOTS));
 					
 					
 				    b.setOwnerId(ctx.getServerHandler().playerEntity.getUniqueID().toString());

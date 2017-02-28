@@ -5,7 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
@@ -73,7 +73,7 @@ public class UpdateMaterialList implements IMessage, IMessageHandler<UpdateMater
 				{
 					for(int i =0; i < b.MaterialList1.size(); i ++)
 					{
-						if(!message.Item.isItemEqual(new ItemStack(Items.water_bucket)) && !message.Item.isItemEqual(new ItemStack(Items.lava_bucket)))
+						if(!message.Item.isItemEqual(new ItemStack(Items.WATER_BUCKET)) && !message.Item.isItemEqual(new ItemStack(Items.LAVA_BUCKET)))
 						{
 							if(message.Item.isItemEqual(new ItemStack(b.MaterialList1.get(i).Blockerino.getBlock())))
 							{
@@ -84,7 +84,7 @@ public class UpdateMaterialList implements IMessage, IMessageHandler<UpdateMater
 									b.MaterialList1.remove(i);
 								}
 							}
-						}else if(message.Item.isItemEqual(new ItemStack(Items.water_bucket)))
+						}else if(message.Item.isItemEqual(new ItemStack(Items.WATER_BUCKET)))
 						{
 							if(b.MaterialList1.get(i).Blockerino.toString().contains("water"))
 							{
@@ -95,7 +95,7 @@ public class UpdateMaterialList implements IMessage, IMessageHandler<UpdateMater
 									b.MaterialList1.remove(i);
 								}
 							}
-						}else if(message.Item.isItemEqual(new ItemStack(Items.lava_bucket)))
+						}else if(message.Item.isItemEqual(new ItemStack(Items.LAVA_BUCKET)))
 						{
 							if(b.MaterialList1.get(i).Blockerino.toString().contains("lava"))
 							{

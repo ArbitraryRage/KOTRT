@@ -13,9 +13,11 @@ import com.waabbuffet.kotrt.proxy.ClientProxy;
 import com.waabbuffet.kotrt.schematic.Structure;
 import com.waabbuffet.kotrt.tileEntities.structure.TileEntityKingdomStructureBlock;
 
+import net.minecraft.init.Biomes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
@@ -52,10 +54,10 @@ public class KotrtGenerator implements IWorldGenerator {
 					{
 					
 
-					BiomeGenBase biome = world.getBiomeGenForCoords(new BlockPos(posX, posY, posZ));
+					Biome biome = world.getBiomeGenForCoords(new BlockPos(posX, posY, posZ));
 				
 					
-					if(!biome.equals(biome.ocean) && !biome.equals(biome.river) && !biome.equals(biome.jungle) && !biome.equals(biome.deepOcean))
+					if(!biome.equals(Biomes.OCEAN) && !biome.equals(Biomes.RIVER) && !biome.equals(Biomes.JUNGLE) && !biome.equals(Biomes.DEEP_OCEAN))
 					{
 							if(world.getBlockState(new BlockPos(posX, posY - 1, posZ)).equals(biome.topBlock))
 							{
@@ -312,6 +314,13 @@ public class KotrtGenerator implements IWorldGenerator {
 		//ShopKeeperCd: -266 5 620 -> -231 5 655
 		//-266 5 620 -> -208 5 634
 		//-266 5 620 -> -183 5 649
+		
+	}
+
+	@Override
+	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
+			IChunkProvider chunkProvider) {
+		// TODO Auto-generated method stub
 		
 	}
 

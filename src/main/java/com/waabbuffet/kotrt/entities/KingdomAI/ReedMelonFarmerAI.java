@@ -10,7 +10,7 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ReedMelonFarmerAI extends EntityAIBase{
@@ -51,7 +51,7 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 		if(this.ReedBlocks.size() == 0)
 		{
 			
-			int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.iron_hoe), false);
+			int HasOrNaw = this.isItemInTileInv(new ItemStack(Items.IRON_HOE), false);
 			
 			if(HasOrNaw != -1 )
 			{
@@ -70,9 +70,9 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 
 						if(x != 7 && x != 0 && z != 0 && z != 7&& (z == 1 || x == 1))
 						{
-							if(!World.getBlockState(B1).equals(Blocks.water.getDefaultState()))
+							if(!World.getBlockState(B1).equals(Blocks.WATER.getDefaultState()))
 							{
-								World.setBlockState(B1, Blocks.water.getDefaultState());
+								World.setBlockState(B1, Blocks.WATER.getDefaultState());
 							}
 						}
 						
@@ -81,9 +81,9 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 						if(x != 7 && x != 0 && z != 0 && z != 7 && (z == 6 || x == 6))
 						{
 							
-								if(!World.getBlockState(B1).equals(Blocks.water.getDefaultState()))
+								if(!World.getBlockState(B1).equals(Blocks.WATER.getDefaultState()))
 								{
-									World.setBlockState(B1, Blocks.water.getDefaultState());
+									World.setBlockState(B1, Blocks.WATER.getDefaultState());
 								}
 						}
 						
@@ -138,8 +138,8 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 		
 		if(this.ReedBlocks.size() != 0)
 		{
-			int HasMelons = this.isItemInTileInv(new ItemStack(Items.melon_seeds), false);
-			int HasSugarCane = this.isItemInTileInv(new ItemStack(Items.reeds), false);
+			int HasMelons = this.isItemInTileInv(new ItemStack(Items.MELON_SEEDS), false);
+			int HasSugarCane = this.isItemInTileInv(new ItemStack(Items.REEDS), false);
 			
 			if(this.FarmerCD == 0)
 			{
@@ -158,10 +158,10 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 	
 							if(!this.World.getBlockState(this.ReedBlocks.get(ListIndex).up()).toString().contains(":melon_stem"))
 							{
-								if(this.DeleteItemsFromTE(new ItemStack(Items.melon_seeds), 1));
+								if(this.DeleteItemsFromTE(new ItemStack(Items.MELON_SEEDS), 1));
 								{
-									World.setBlockState(this.ReedBlocks.get(ListIndex), Blocks.farmland.getDefaultState());
-									World.setBlockState(this.ReedBlocks.get(ListIndex).up(), Blocks.melon_stem.getDefaultState());
+									World.setBlockState(this.ReedBlocks.get(ListIndex), Blocks.FARMLAND.getDefaultState());
+									World.setBlockState(this.ReedBlocks.get(ListIndex).up(), Blocks.MELON_STEM.getDefaultState());
 									
 									this.FarmerCD = 40;
 								}
@@ -181,14 +181,14 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 							if((NewX == 0 || NewX == 7) || (NewZ == 0 || NewZ == 7))
 							{
 								
-								if(!this.World.getBlockState(this.ReedBlocks.get(ListIndex).up()).toString().contains(":reeds"))
+								if(!this.World.getBlockState(this.ReedBlocks.get(ListIndex).up()).toString().contains(":REEDS"))
 								{
 									
-									if(Blocks.reeds.canPlaceBlockAt(World, this.ReedBlocks.get(ListIndex).up()))
+									if(Blocks.REEDS.canPlaceBlockAt(World, this.ReedBlocks.get(ListIndex).up()))
 									{
-												if(this.DeleteItemsFromTE(new ItemStack(Items.reeds), 1));
+												if(this.DeleteItemsFromTE(new ItemStack(Items.REEDS), 1));
 												{
-													World.setBlockState(this.ReedBlocks.get(ListIndex).up(), Blocks.reeds.getDefaultState());
+													World.setBlockState(this.ReedBlocks.get(ListIndex).up(), Blocks.REEDS.getDefaultState());
 													this.FarmerCD = 40;
 												}
 									}
@@ -206,7 +206,7 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 						{
 							if(this.World.getBlockState(this.ReedBlocks.get(ListIndex).up()).toString().contains("melon"))
 							{
-									this.GiveItemToTE(new ItemStack(Items.melon, 3));
+									this.GiveItemToTE(new ItemStack(Items.MELON, 3));
 									this.World.setBlockToAir(this.ReedBlocks.get(ListIndex).up());
 									this.FarmerCD = 40;
 								
@@ -217,10 +217,10 @@ public class ReedMelonFarmerAI extends EntityAIBase{
 						if((NewX == 0 || NewX == 7) || (NewZ == 0 || NewZ == 7))
 						{
 							
-								if(this.World.getBlockState(this.ReedBlocks.get(ListIndex).up().up()).toString().contains(":reeds"))
+								if(this.World.getBlockState(this.ReedBlocks.get(ListIndex).up().up()).toString().contains(":REEDS"))
 								{
 								
-									this.GiveItemToTE(new ItemStack(Items.reeds, 1));
+									this.GiveItemToTE(new ItemStack(Items.REEDS, 1));
 									this.World.setBlockToAir(this.ReedBlocks.get(ListIndex).up().up());
 									this.FarmerCD = 40;
 								

@@ -64,8 +64,8 @@ import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -173,36 +173,36 @@ public class PropertiesEvent {
 	}
 	
 	@SubscribeEvent
-	public void onEntityRightClick(EntityInteractEvent  event)
+	public void onEntityRightClick(EntityInteract  event)
 	{
-		if(event.target instanceof EntityFarmer)
+		if(event.getTarget() instanceof EntityFarmer)
 		{
-			EntityFarmer b = (EntityFarmer) event.target;
+			EntityFarmer b = (EntityFarmer) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBase(event.getEntityPlayer(), b, event.getEntityPlayer().worldObj));
 			
-		}else if(event.target instanceof EntityShopKeeper)
+		}else if(event.getTarget() instanceof EntityShopKeeper)
 		{
 
-			EntityShopKeeper b = (EntityShopKeeper) event.target;
+			EntityShopKeeper b = (EntityShopKeeper) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityShopKeeper(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj, EntityShopKeeper.FillItemRegBlocks()));
 		}
-		else if(event.target instanceof EntityRecruiter)
+		else if(event.getTarget() instanceof EntityRecruiter)
 		{
 
-			EntityRecruiter b = (EntityRecruiter) event.target;
+			EntityRecruiter b = (EntityRecruiter) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiRecruiter(event.getEntityPlayer(), b, event.getEntityPlayer().worldObj));
-		}else if(event.target instanceof EntityOutpostBase)
+		}else if(event.getTarget() instanceof EntityOutpostBase)
 		{
 
-			EntityOutpostBase b = (EntityOutpostBase) event.target;
+			EntityOutpostBase b = (EntityOutpostBase) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiOutpostBase(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
-		}else if(event.target instanceof EntitySellShopKeeper)
+		}else if(event.getTarget() instanceof EntitySellShopKeeper)
 		{
-			EntitySellShopKeeper b = (EntitySellShopKeeper) event.target;
+			EntitySellShopKeeper b = (EntitySellShopKeeper) event.getTarget();
 			ShopKeeperItemFormat SaleItems[] = new ShopKeeperItemFormat[100];
 			
 			SaleItems[0] = new ShopKeeperItemFormat(new ItemStack(Items.IRON_INGOT), 15);
@@ -281,16 +281,16 @@ public class PropertiesEvent {
 			
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntitySellKeeper(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj, SaleItems));
-		}else if(event.target instanceof EntityBarracks)
+		}else if(event.getTarget() instanceof EntityBarracks)
 		{
 
-			EntityBarracks b = (EntityBarracks) event.target;
+			EntityBarracks b = (EntityBarracks) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBarracks(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
-		}else if(event.target instanceof EntityCathedral)
+		}else if(event.getTarget() instanceof EntityCathedral)
 		{
 
-			EntityCathedral b = (EntityCathedral) event.target;
+			EntityCathedral b = (EntityCathedral) event.getTarget();
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityCathedral(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
 		}

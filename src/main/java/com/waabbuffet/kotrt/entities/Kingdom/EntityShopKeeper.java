@@ -55,9 +55,8 @@ public class EntityShopKeeper extends EntityTameable {
 	}
 	
 	@Override
-	public void writeToNBT(NBTTagCompound tagCompound) {
-		// TODO Auto-generated method stub
-		super.writeToNBT(tagCompound);
+	public NBTTagCompound writeToNBT(NBTTagCompound tagCompound) {
+		return super.writeToNBT(tagCompound);
 	}
 	
 	

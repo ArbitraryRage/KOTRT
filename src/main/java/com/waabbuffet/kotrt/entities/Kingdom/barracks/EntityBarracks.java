@@ -1,6 +1,6 @@
 package com.waabbuffet.kotrt.entities.Kingdom.barracks;
 
-import net.minecraft.client.particle.EntityFirework;
+import net.minecraft.client.particle.ParticleFirework;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.item.EntityFireworkRocket;
@@ -31,8 +31,8 @@ public class EntityBarracks extends EntityTameable {
 
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
 		
 	}
 	

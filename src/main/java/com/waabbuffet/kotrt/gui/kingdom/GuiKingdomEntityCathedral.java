@@ -262,7 +262,7 @@ public class GuiKingdomEntityCathedral extends GuiScreen{
 				{
 					this.Barracks.decreaseStoredXP(15);
 				
-					this.Player.addPotionEffect(new PotionEffect(Potion.digSpeed.getId(), 12000, 1));
+					this.Player.addPotionEffect(new PotionEffect(Potion.getPotionById(3), 12000, 1));
 				}
 				break;
 			case 10:
@@ -271,7 +271,7 @@ public class GuiKingdomEntityCathedral extends GuiScreen{
 				{
 					this.Barracks.decreaseStoredXP(15);
 				
-					this.Player.addPotionEffect(new PotionEffect(Potion.damageBoost.getId(), 12000, 2));
+					this.Player.addPotionEffect(new PotionEffect(Potion.getPotionById(5), 12000, 2));
 				}
 				break;
 			case 11:
@@ -280,7 +280,7 @@ public class GuiKingdomEntityCathedral extends GuiScreen{
 				{
 					this.Barracks.decreaseStoredXP(15);
 					
-					this.Player.addPotionEffect(new PotionEffect(Potion.nightVision.getId(), 12000, 2));
+					this.Player.addPotionEffect(new PotionEffect(Potion.getPotionById(16), 12000, 2));
 				}
 				break;
 			case 12:
@@ -289,7 +289,7 @@ public class GuiKingdomEntityCathedral extends GuiScreen{
 				{
 					this.Barracks.decreaseStoredXP(15);
 
-					this.Player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 12000, 2));
+					this.Player.addPotionEffect(new PotionEffect(Potion.getPotionById(1), 12000, 2));
 				}
 				break;
 				

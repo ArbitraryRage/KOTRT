@@ -522,7 +522,7 @@ public class MinerAI  extends EntityAIBase {
 			{
 				if(b1.contains("East"))
 				{
-					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() + 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 2)).equals(Blocks.cobblestone.getDefaultState())) 
+					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() + 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 2)).equals(Blocks.COBBLESTONE.getDefaultState())) 
 					{
 						World.setBlockToAir(new BlockPos(this.Farmer.getWorkPlace().getX() + 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 2));
 						this.Farmer.getNavigator().tryMoveToXYZ(this.Farmer.getWorkPlace().getX() + 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 2, 1.0D);
@@ -532,7 +532,7 @@ public class MinerAI  extends EntityAIBase {
 					}
 				}else if(b1.contains("West"))
 				{
-					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() - 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 2)).equals(Blocks.cobblestone.getDefaultState())) 
+					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() - 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 2)).equals(Blocks.COBBLESTONE.getDefaultState())) 
 					{
 						World.setBlockToAir(new BlockPos(this.Farmer.getWorkPlace().getX() - 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 2));
 						this.Farmer.getNavigator().tryMoveToXYZ(this.Farmer.getWorkPlace().getX() - 1, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 2, 1.0D);
@@ -542,7 +542,7 @@ public class MinerAI  extends EntityAIBase {
 					}
 				}else if(b1.contains("North"))
 				{
-					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() + 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 1)).equals(Blocks.cobblestone.getDefaultState())) 
+					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() + 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 1)).equals(Blocks.COBBLESTONE.getDefaultState())) 
 					{
 						World.setBlockToAir(new BlockPos(this.Farmer.getWorkPlace().getX() + 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 1));
 						this.Farmer.getNavigator().tryMoveToXYZ(this.Farmer.getWorkPlace().getX() + 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() - 1, 1.0D);
@@ -553,7 +553,7 @@ public class MinerAI  extends EntityAIBase {
 				}else if(b1.contains("South"))
 				{
 				
-					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() - 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 1)).equals(Blocks.cobblestone.getDefaultState())) 
+					if(World.getBlockState(new BlockPos(this.Farmer.getWorkPlace().getX() - 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 1)).equals(Blocks.COBBLESTONE.getDefaultState())) 
 					{
 						World.setBlockToAir(new BlockPos(this.Farmer.getWorkPlace().getX() - 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 1));
 						this.Farmer.getNavigator().tryMoveToXYZ(this.Farmer.getWorkPlace().getX() - 2, this.Farmer.getWorkPlace().getY(), this.Farmer.getWorkPlace().getZ() + 1, 1.0D);
@@ -601,7 +601,7 @@ public class MinerAI  extends EntityAIBase {
 			 {
 				 if(this.getTE().inventory[k] != null)
 				 {
-					if(this.getTE().inventory[k].isItemEqual(new ItemStack(Blocks.cobblestone)))
+					if(this.getTE().inventory[k].isItemEqual(new ItemStack(Blocks.COBBLESTONE)))
 					{
 						if(this.getTE().inventory[k].stackSize < 64)
 						{
@@ -622,7 +622,7 @@ public class MinerAI  extends EntityAIBase {
 					 if(this.getTE().inventory[m] != null)
 					 {
 						 
-						if(this.getTE().inventory[m].isItemEqual(new ItemStack(Items.coal)))
+						if(this.getTE().inventory[m].isItemEqual(new ItemStack(Items.COAL)))
 						{
 							if(this.getTE().inventory[m].stackSize < 64)
 							{	
@@ -646,7 +646,7 @@ public class MinerAI  extends EntityAIBase {
 					 if(this.getTE().inventory[m] != null)
 					 {
 						 
-						if(this.getTE().inventory[m].isItemEqual(new ItemStack(Blocks.iron_ore)))
+						if(this.getTE().inventory[m].isItemEqual(new ItemStack(Blocks.IRON_ORE)))
 						{
 							if(this.getTE().inventory[m].stackSize < 63)
 							{	
@@ -668,7 +668,7 @@ public class MinerAI  extends EntityAIBase {
 					 {
 						 if(this.getTE().inventory[j2] == null)
 						 {
-							 this.getTE().inventory[j2] = new ItemStack(Blocks.cobblestone);
+							 this.getTE().inventory[j2] = new ItemStack(Blocks.COBBLESTONE);
 							 PlaceLog = false;
 							 break;
 						 }
@@ -682,7 +682,7 @@ public class MinerAI  extends EntityAIBase {
 					 {
 						 if(this.getTE().inventory[j3] == null)
 						 {
-							this.getTE().inventory[j3] = new ItemStack(Items.coal);
+							this.getTE().inventory[j3] = new ItemStack(Items.COAL);
 							this.getTE().inventory[j3].stackSize += 1;
 							PlaceSapling = false;
 							break;
@@ -696,7 +696,7 @@ public class MinerAI  extends EntityAIBase {
 					 {
 						 if(this.getTE().inventory[j4] == null)
 						 {
-							this.getTE().inventory[j4] = new ItemStack(Blocks.iron_ore);
+							this.getTE().inventory[j4] = new ItemStack(Blocks.IRON_ORE);
 							this.getTE().inventory[j4].stackSize += 1;
 							PlaceSapling = false;
 							break;

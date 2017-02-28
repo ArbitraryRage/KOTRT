@@ -4,7 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -15,13 +15,12 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.inventory.IInvBasic;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.Vec3;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class EntityBarracksWarrior extends EntityTameable{
@@ -36,7 +35,7 @@ public class EntityBarracksWarrior extends EntityTameable{
 
 		
 	        this.tasks.addTask(1, new EntityAISwimming(this));
-	        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, 1.5D, true));
+	        this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.5D, true));
 	        this.tasks.addTask(5, new EntityAIFollowOwner(this, 1.2D, 10.0F, 2.0F));
 	        this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 	        this.tasks.addTask(9, new EntityAILookIdle(this));
@@ -53,8 +52,8 @@ public class EntityBarracksWarrior extends EntityTameable{
 
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
 		
 	}
 	@Override
@@ -81,7 +80,7 @@ public class EntityBarracksWarrior extends EntityTameable{
      */
     protected boolean teleportToEntity(Entity p_70816_1_)
     {
-        Vec3 vec3 = new Vec3(this.posX - p_70816_1_.posX, this.getEntityBoundingBox().minY + (double)(this.height / 2.0F) - p_70816_1_.posY + (double)p_70816_1_.getEyeHeight(), this.posZ - p_70816_1_.posZ);
+        Vec3d vec3 = new Vec3d(this.posX - p_70816_1_.posX, this.getEntityBoundingBox().minY + (double)(this.height / 2.0F) - p_70816_1_.posY + (double)p_70816_1_.getEyeHeight(), this.posZ - p_70816_1_.posZ);
         vec3 = vec3.normalize();
         double d0 = 16.0D;
         double d1 = this.posX + (this.rand.nextDouble() - 0.5D) * 8.0D - vec3.xCoord * d0;
@@ -100,9 +99,9 @@ public class EntityBarracksWarrior extends EntityTameable{
         double d0 = this.posX;
         double d1 = this.posY;
         double d2 = this.posZ;
-        this.posX = event.targetX;
-        this.posY = event.targetY;
-        this.posZ = event.targetZ;
+        this.posX = event.getTargetX();
+        this.posY = event.getTargetY();
+        this.posZ = event.getTargetZ();
         boolean flag = false;
         BlockPos blockpos = new BlockPos(this.posX, this.posY, this.posZ);
 
@@ -115,7 +114,7 @@ public class EntityBarracksWarrior extends EntityTameable{
                 BlockPos blockpos1 = blockpos.down();
                 Block block = this.worldObj.getBlockState(blockpos1).getBlock();
 
-                if (block.getMaterial().blocksMovement())
+                if (block.getMaterial(null).blocksMovement())
                 {
                     flag1 = true;
                 }
@@ -130,7 +129,7 @@ public class EntityBarracksWarrior extends EntityTameable{
             {
                 super.setPositionAndUpdate(this.posX, this.posY, this.posZ);
 
-                if (this.worldObj.getCollidingBoundingBoxes(this, this.getEntityBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getEntityBoundingBox()))
+                if (this.worldObj.getCollisionBoxes(this, this.getEntityBoundingBox()).isEmpty() && !this.worldObj.containsAnyLiquid(this.getEntityBoundingBox()))
                 {
                     flag = true;
                 }
@@ -158,8 +157,8 @@ public class EntityBarracksWarrior extends EntityTameable{
                 this.worldObj.spawnParticle(EnumParticleTypes.PORTAL, d3, d4, d5, (double)f, (double)f1, (double)f2, new int[0]);
             }
 
-            this.worldObj.playSoundEffect(d0, d1, d2, "mob.endermen.portal", 1.0F, 1.0F);
-            this.playSound("mob.endermen.portal", 1.0F, 1.0F);
+            //this.worldObj.playSoundEffect(d0, d1, d2, "mob.endermen.portal", 1.0F, 1.0F);
+            //this.playSound("mob.endermen.portal", 1.0F, 1.0F);
             return true;
         }
     }
