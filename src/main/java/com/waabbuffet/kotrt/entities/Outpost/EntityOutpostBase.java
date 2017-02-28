@@ -36,7 +36,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
@@ -337,7 +337,7 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 		case 4:
 			//Kill 16 zombies
 			this.QuestObjectiveTracker = 16;
-	//		b = new QuestFormat(1,1, new EntityZombie(this.worldObj), new ItemStack(Items.apple));
+	//		b = new QuestFormat(1,1, new EntityZombie(this.worldObj), new ItemStack(Items.APPLE));
 			
 			break;
 		case 5:
@@ -549,53 +549,53 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 			break;
 		case 13:
 			//Deliver 16 Piston to Villager
-			b = new QuestFormat(3, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.piston, 16));
+			b = new QuestFormat(3, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.PISTON, 16));
 			break;
 		
 		case 14:
 			//Deliver 16 Jack O lantern to Villager
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.pumpkin, 16));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.PUMPKIN, 16));
 			break;
 		case 15:
 			//Deliver 2 Diamond to Villager
-			b = new QuestFormat(4, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.diamond, 2));
+			b = new QuestFormat(4, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.DIAMOND, 2));
 			break;
 		case 16:
 			//Deliver 32 Arrow to Villager
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.arrow, 32));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.ARROW, 32));
 			break;
 		case 17:
 			//Deliver 16 White stained clay to Villager
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.stained_hardened_clay, 16, 0));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Blocks.STAINED_HARDENED_CLAY, 16, 0));
 			break;
 		case 18:
 			//Kill 16 Ghast
-			b = new QuestFormat(4, 1, new EntityGhast(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(4, 1, new EntityGhast(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 19:
 			//Kill 16 Pigman
-			b = new QuestFormat(3, 1, new EntityPigZombie(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(3, 1, new EntityPigZombie(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 20:
 			//Kill 16 sheep
-			b = new QuestFormat(1, 1, new EntitySheep(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(1, 1, new EntitySheep(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 21:
 			//Kill 16 cow
-			b = new QuestFormat(2, 1, new EntityCow(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(2, 1, new EntityCow(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 22:
 			//Kill 16 Pig
-			b = new QuestFormat(2, 1, new EntityPig(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(2, 1, new EntityPig(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 23:
 			//Kill 16 Squid
-			b = new QuestFormat(2, 1, new EntitySquid(this.worldObj), new ItemStack(Items.wheat, 16));
+			b = new QuestFormat(2, 1, new EntitySquid(this.worldObj), new ItemStack(Items.WHEAT, 16));
 			
 			break;
 		case 24:

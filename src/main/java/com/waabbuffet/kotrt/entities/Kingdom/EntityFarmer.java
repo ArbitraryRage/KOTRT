@@ -53,9 +53,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
@@ -243,7 +243,7 @@ public class EntityFarmer extends EntityKingdomBase {
 	// Door
 		
 		TempHowMany[0] = 6;
-		TempItems[0] = new ItemStack(Blocks.planks);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
 		
 
 	
@@ -256,8 +256,8 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[0] = 6; // planks
 		TempHowMany[1] = 3; // book
 	
-		TempItems[0] = new ItemStack(Blocks.planks);
-		TempItems[1] = new ItemStack(Items.book);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
+		TempItems[1] = new ItemStack(Items.BOOK);
 	
 		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 320, TempHowMany, new ItemStack(Blocks.bookshelf, 2))); //cost, craftingTime (Ticks), howMany, produced
 		
@@ -267,8 +267,8 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[0] = 4; // planks
 		TempHowMany[1] = 2; // sticks
 	
-		TempItems[0] = new ItemStack(Blocks.planks);
-		TempItems[1] = new ItemStack(Items.stick);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
+		TempItems[1] = new ItemStack(Items.STICK);
 		
 		
 		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.oak_fence, 8)));
@@ -276,59 +276,59 @@ public class EntityFarmer extends EntityKingdomBase {
 		
 		TempHowMany[0] = 7; // sticks
 	
-		TempItems[0] = new ItemStack(Items.stick);
+		TempItems[0] = new ItemStack(Items.STICK);
 		
 	
 			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.ladder)));
 	//Change Wood (0 = oak, 1 = spruce, 2 = birch, 3 = jungle, 4 = Acapaca, 5 = dark oak) logs are the same pattern
 		//oak into spruce
 			TempHowMany[0] = 1;
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 0);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 0);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,1)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,1)));
 			
 			//spruce into birch
 			TempHowMany[0] = 1; 
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 1);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 1);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,2)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,2)));
 			//birch into jungle
 			TempHowMany[0] = 1;
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 2);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 2);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,3)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,3)));
 			//jungle into acapaca
 			TempHowMany[0] = 1; 
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 3);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 3);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,4)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,4)));
 			
 			//Acapaca into dark
 			TempHowMany[0] = 1; 
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 4);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 4);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,5)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,5)));
 			//Dark into oak
 			TempHowMany[0] = 1; 
-			TempItems[0] = new ItemStack(Blocks.planks, 1, 5);
+			TempItems[0] = new ItemStack(Blocks.PLANKS, 1, 5);
 			
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.planks, 1,0)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 5, TempHowMany, new ItemStack(Blocks.PLANKS, 1,0)));
 	//Stairs
 		TempHowMany[0] = 6; // sticks
-		TempItems[0] = new ItemStack(Blocks.planks);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
 		
-		this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.oak_stairs)));
+		this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.OAK_STAIRS)));
 		
 	//Trap door
 		TempHowMany[0] = 6; // sticks
-		TempItems[0] = new ItemStack(Blocks.planks);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
 		
 		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.trapdoor)));
 
 
 		//Crafting Table
 		TempHowMany[0] = 4; // sticks
-		TempItems[0] = new ItemStack(Blocks.planks);
+		TempItems[0] = new ItemStack(Blocks.PLANKS);
 				
 		this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.crafting_table)));
 		//leaves 
@@ -391,24 +391,24 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[0] = 1; // cobblestone
 		TempItems[0] = new ItemStack(Blocks.iron_ore);
 			
-		this.CraftingObjects.add(3, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.iron_ingot, 2)));
+		this.CraftingObjects.add(3, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.IRON_INGOT, 2)));
 		
 //		Gold ore -> Gold
 		TempHowMany[0] = 1; // cobblestone
 		TempItems[0] = new ItemStack(Blocks.gold_ore);
 			
-		this.CraftingObjects.add(4, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.gold_ingot, 2)));
+		this.CraftingObjects.add(4, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.GOLD_INGOT, 2)));
 		
 //		Clay ore -> brick
 		TempHowMany[0] = 1; // cobblestone
 		TempItems[0] = new ItemStack(Items.clay_ball);
 			
-		this.CraftingObjects.add(5, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.brick, 2)));
+		this.CraftingObjects.add(5, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.BRICK, 2)));
 //		Clay block -> Harden
 		TempHowMany[0] = 1; // cobblestone
 		TempItems[0] = new ItemStack(Blocks.clay);
 			
-		this.CraftingObjects.add(6, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.hardened_clay, 2)));
+		this.CraftingObjects.add(6, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.HARDENED_CLAY, 2)));
 		
 //		Piston 
 		TempHowMany[0] = 4; // cobblestone
@@ -417,29 +417,29 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[3] = 1; // redstone
 		
 		TempItems[0] = new ItemStack(Blocks.cobblestone);
-		TempItems[1] = new ItemStack(Blocks.planks);
-		TempItems[2] = new ItemStack(Items.iron_ingot);
-		TempItems[3] = new ItemStack(Items.redstone);
+		TempItems[1] = new ItemStack(Blocks.PLANKS);
+		TempItems[2] = new ItemStack(Items.IRON_INGOT);
+		TempItems[3] = new ItemStack(Items.REDSTONE);
 			
-		this.CraftingObjects.add(7, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.piston, 2)));
+		this.CraftingObjects.add(7, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.PISTON, 2)));
 		
 //		Rail -> Harden (0 = rail, 1 = , 2 = )
 		TempHowMany[0] = 1; // stick
 		TempHowMany[1] = 6; // iron
 		
-		TempItems[0] = new ItemStack(Items.stick);
-		TempItems[1] = new ItemStack(Items.iron_ingot);
+		TempItems[0] = new ItemStack(Items.STICK);
+		TempItems[1] = new ItemStack(Items.IRON_INGOT);
 			
-		this.CraftingObjects.add(8, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.rail, 20)));	
+		this.CraftingObjects.add(8, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.RAIL, 20)));	
 		
 //		Powered Rail 
 		TempHowMany[0] = 1; // stick
 		TempHowMany[1] = 6; // gold
 		TempHowMany[2] = 1; // redstone
 		
-		TempItems[0] = new ItemStack(Items.stick);
-		TempItems[1] = new ItemStack(Items.iron_ingot);
-		TempItems[2] = new ItemStack(Items.redstone);
+		TempItems[0] = new ItemStack(Items.STICK);
+		TempItems[1] = new ItemStack(Items.IRON_INGOT);
+		TempItems[2] = new ItemStack(Items.REDSTONE);
 		
 		this.CraftingObjects.add(9, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.golden_rail, 9)));	
 //		Stone -> lava

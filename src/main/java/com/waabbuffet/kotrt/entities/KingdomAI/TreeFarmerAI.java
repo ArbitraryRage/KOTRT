@@ -392,7 +392,7 @@ public class TreeFarmerAI extends EntityAIBase {
 											 if(this.getTE().inventory[m] != null)
 											 {
 												 
-												if(this.getTE().inventory[m].isItemEqual(new ItemStack(Items.apple)))
+												if(this.getTE().inventory[m].isItemEqual(new ItemStack(Items.APPLE)))
 												{
 													if(this.getTE().inventory[m].stackSize < 63)
 													{	
@@ -448,7 +448,7 @@ public class TreeFarmerAI extends EntityAIBase {
 								 {
 									 if(this.getTE().inventory[j4] == null)
 									 {
-										this.getTE().inventory[j4] = new ItemStack(Items.apple);
+										this.getTE().inventory[j4] = new ItemStack(Items.APPLE);
 										this.getTE().inventory[j4].stackSize += 1;
 										PlaceSapling = false;
 										break;

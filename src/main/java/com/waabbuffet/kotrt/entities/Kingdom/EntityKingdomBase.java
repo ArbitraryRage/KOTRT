@@ -11,9 +11,10 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
@@ -47,8 +48,8 @@ public class EntityKingdomBase extends EntityTameable {
 	
 	protected void applyEntityAttributes(){
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.3D);
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(40.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.3D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(40.0D);
 		
 	}
 	
@@ -71,9 +72,9 @@ public class EntityKingdomBase extends EntityTameable {
 	
 	
 	@Override
-	public void setCurrentItemOrArmor(int slotIn, ItemStack stack) {
+	public void setItemStackToSlot(EntityEquipmentSlot slotIn, ItemStack stack) {
 	
-		super.setCurrentItemOrArmor(slotIn, stack);
+		super.setItemStackToSlot(slotIn, stack);
 	}
 	
 	@Override

@@ -249,7 +249,7 @@ public class PropertiesEvent {
 			SaleItems[33] = null;//gone
 			SaleItems[34] = new ShopKeeperItemFormat(new ItemStack(Items.potato), 3);
 			
-			SaleItems[35] = new ShopKeeperItemFormat(new ItemStack(Items.apple), 20); 
+			SaleItems[35] = new ShopKeeperItemFormat(new ItemStack(Items.APPLE), 20); 
 			SaleItems[36] = null; //gone
 			SaleItems[37] = new ShopKeeperItemFormat(new ItemStack(Items.melon), 3);
 			SaleItems[38] = null; //gone
