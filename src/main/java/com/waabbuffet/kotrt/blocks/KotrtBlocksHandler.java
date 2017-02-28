@@ -20,9 +20,9 @@ public class KotrtBlocksHandler {
 	
 	public static void init()
 	{
-		kingdom_structureblock = new StructureBlock(Material.barrier).setUnlocalizedName("kingdom_structureblock");
-		kingdom_structurebuilderblock = new StructureBuilderBlock(Material.cloth).setUnlocalizedName("kingdom_structure_builder_block");
-		kingdom_outline_Block = new StructureOulineBlock(Material.barrier).setUnlocalizedName("kingdom_outline_block");
+		kingdom_structureblock = new StructureBlock(Material.BARRIER).setUnlocalizedName("kingdom_structureblock");
+		kingdom_structurebuilderblock = new StructureBuilderBlock(Material.CLOTH).setUnlocalizedName("kingdom_structure_builder_block");
+		kingdom_outline_Block = new StructureOulineBlock(Material.BARRIER).setUnlocalizedName("kingdom_outline_block");
 	}
 	
 	public static void register()
