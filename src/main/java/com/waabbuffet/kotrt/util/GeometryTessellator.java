@@ -3,9 +3,9 @@ package com.waabbuffet.kotrt.util;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.vertex.VertexBuffer;;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 public class GeometryTessellator extends Tessellator {
     private static GeometryTessellator instance = null;
@@ -30,7 +30,7 @@ public class GeometryTessellator extends Tessellator {
     }
 
     public void setTranslation(final double x, final double y, final double z) {
-        getWorldRenderer().setTranslation(x, y, z);
+        getBuffer().setTranslation(x, y, z);
     }
 
     public void beginQuads() {
@@ -42,7 +42,7 @@ public class GeometryTessellator extends Tessellator {
     }
 
     public void begin(final int mode) {
-        getWorldRenderer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
+        getBuffer().begin(mode, DefaultVertexFormats.POSITION_COLOR);
     }
 
     @Override
@@ -63,18 +63,18 @@ public class GeometryTessellator extends Tessellator {
     }
 
     public void drawCuboid(final BlockPos begin, final BlockPos end, final int sides, final int argb) {
-        drawCuboid(getWorldRenderer(), begin, end, sides, argb, this.delta);
+        drawCuboid(getBuffer(), begin, end, sides, argb, this.delta);
     }
 
-    public static void drawCuboid(final WorldRenderer worldRenderer, final BlockPos pos, final int sides, final int argb) {
+    public static void drawCuboid(final VertexBuffer worldRenderer, final BlockPos pos, final int sides, final int argb) {
         drawCuboid(worldRenderer, pos, pos, sides, argb);
     }
 
-    public static void drawCuboid(final WorldRenderer worldRenderer, final BlockPos begin, final BlockPos end, final int sides, final int argb) {
+    public static void drawCuboid(final VertexBuffer worldRenderer, final BlockPos begin, final BlockPos end, final int sides, final int argb) {
         drawCuboid(worldRenderer, begin, end, sides, argb, GeometryTessellator.deltaS);
     }
 
-    private static void drawCuboid(final WorldRenderer worldRenderer, final BlockPos begin, final BlockPos end, final int sides, final int argb, final double delta) {
+    private static void drawCuboid(final VertexBuffer worldRenderer, final BlockPos begin, final BlockPos end, final int sides, final int argb, final double delta) {
         if (worldRenderer.getDrawMode() == -1 || sides == 0) {
             return;
         }

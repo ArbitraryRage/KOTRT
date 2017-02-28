@@ -282,7 +282,7 @@ public class BuilderAI extends EntityAIBase{
 		{
 			if(NearestChests.get(index).getStackInSlot(i) != null)
 			{
-				if(NearestChests.get(index).getStackInSlot(i).getIsItemStackEqual(Items))
+				if(NearestChests.get(index).getStackInSlot(i).equals(Items))
 				{
 					
 					if(NearestChests.get(index).getStackInSlot(i).stackSize > HowMany)

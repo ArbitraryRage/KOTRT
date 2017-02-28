@@ -8,7 +8,7 @@ import com.waabbuffet.kotrt.tileEntities.structure.TileEntityKingdomStructureBlo
 
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class MailManAI extends EntityAIBase {

@@ -6,7 +6,7 @@ import com.waabbuffet.kotrt.tileEntities.structure.TileEntityKingdomStructureBui
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class StructureSchematicPrintToWorld {
@@ -32,10 +32,10 @@ public class StructureSchematicPrintToWorld {
 						world.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), ClientProxy.data.FullBlocks[x][y][z]);
 					}else{
 						if(ClientProxy.data.FullBlocks[x][y][z].toString().contains("stone")){
-							world.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), Blocks.stone_brick_stairs.getStateFromMeta(GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], world, new BlockPos(x,y,z), Direction)));
+							world.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), Blocks.STONE_BRICK_STAIRS.getStateFromMeta(GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], world, new BlockPos(x,y,z), Direction)));
 						}else{
 							//Minecraft.getMinecraft().theWorld.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), Blocks.oak_stairs.getStateFromMeta(GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], Minecraft.getMinecraft().theWorld, new BlockPos(x,y,z))));
-							world.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), Blocks.oak_stairs.getStateFromMeta(GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], world, new BlockPos(x,y,z), Direction)));
+							world.setBlockState(new BlockPos(placePosX, placePosY, placePosZ), Blocks.OAK_STAIRS.getStateFromMeta(GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], world, new BlockPos(x,y,z), Direction)));
 						}
 
 						//GenStairsHandler.CorrectOrientation(ClientProxy.data.FullBlocks[x][y][z], Minecraft.getMinecraft().theWorld, new BlockPos(x,y,z));

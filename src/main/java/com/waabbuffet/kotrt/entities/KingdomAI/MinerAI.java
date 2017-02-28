@@ -13,8 +13,9 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class MinerAI  extends EntityAIBase {
@@ -47,25 +48,25 @@ public class MinerAI  extends EntityAIBase {
 	{
 		//************************************************************//
 				// Floor One
-					PerfectMiningStructure[0][0][0] = Blocks.stone;
-					PerfectMiningStructure[1][0][0] = Blocks.stone;
-					PerfectMiningStructure[2][0][0] = Blocks.stone;
+					PerfectMiningStructure[0][0][0] = Blocks.STONE;
+					PerfectMiningStructure[1][0][0] = Blocks.STONE;
+					PerfectMiningStructure[2][0][0] = Blocks.STONE;
 					
-					PerfectMiningStructure[0][0][1] = Blocks.stone;
+					PerfectMiningStructure[0][0][1] = Blocks.STONE;
 			//		PerfectMiningStructure[1][0][1] = Blocks.air;
-					PerfectMiningStructure[2][0][1] = Blocks.stone;
+					PerfectMiningStructure[2][0][1] = Blocks.STONE;
 					
 			//		PerfectMiningStructure[0][0][2] = Blocks.air;
-					PerfectMiningStructure[2][0][2] = Blocks.stone;
+					PerfectMiningStructure[2][0][2] = Blocks.STONE;
 					
 				
-					PerfectMiningStructure[0][0][4] = Blocks.stone;
-					PerfectMiningStructure[1][0][4] = Blocks.stone;
-					PerfectMiningStructure[2][0][4] = Blocks.stone;
+					PerfectMiningStructure[0][0][4] = Blocks.STONE;
+					PerfectMiningStructure[1][0][4] = Blocks.STONE;
+					PerfectMiningStructure[2][0][4] = Blocks.STONE;
 					
-					PerfectMiningStructure[0][0][3] = Blocks.stone;
+					PerfectMiningStructure[0][0][3] = Blocks.STONE;
 			//		PerfectMiningStructure[1][0][3] = Blocks.air;
-					PerfectMiningStructure[2][0][3] = Blocks.stone;
+					PerfectMiningStructure[2][0][3] = Blocks.STONE;
 					
 					//************************************************************//
 					// Floor two
@@ -97,7 +98,7 @@ public class MinerAI  extends EntityAIBase {
 			//		PerfectMiningStructure[2][2][0] = Blocks.air;
 					
 					PerfectMiningStructure[0][2][1] = Blocks.COBBLESTONE_WALL;
-					PerfectMiningStructure[1][2][1] = Blocks.water;
+					PerfectMiningStructure[1][2][1] = Blocks.WATER;
 					PerfectMiningStructure[2][2][1] = Blocks.COBBLESTONE_WALL;
 					
 			//		PerfectMiningStructure[0][2][2] = Blocks.air;
@@ -109,7 +110,7 @@ public class MinerAI  extends EntityAIBase {
 			//		PerfectMiningStructure[2][2][4] = Blocks.air;
 					
 					PerfectMiningStructure[0][2][3] = Blocks.COBBLESTONE_WALL;
-					PerfectMiningStructure[1][2][3] = Blocks.lava;
+					PerfectMiningStructure[1][2][3] = Blocks.LAVA;
 					PerfectMiningStructure[2][2][3] = Blocks.COBBLESTONE_WALL;
 	}
 	
@@ -183,9 +184,11 @@ public class MinerAI  extends EntityAIBase {
 		if(!this.BuildingMode)
 		{
 			
-			if(this.isItemInTileInv(new ItemStack(Items.iron_pickaxe)) != -1 || this.isInFarmerInv(new ItemStack(Items.iron_pickaxe)))
+			if(this.isItemInTileInv(new ItemStack(Items.IRON_PICKAXE)) != -1 || this.isInFarmerInv(new ItemStack(Items.IRON_PICKAXE)))
 			{
-				this.Farmer.setCurrentItemOrArmor(0, new ItemStack(Items.iron_pickaxe));
+				this.Farmer.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.IRON_PICKAXE));
+				//don't know if this will work...gonna try it anyway
+				//0 to EntityEquipmentSlot.MAINHAND because slots are handled differently
 				this.MiningMode = true;
 				
 				return true;
@@ -578,7 +581,7 @@ public class MinerAI  extends EntityAIBase {
 		{
 			if(Te.getStackInSlot(i) != null)
 			{
-				if(Te.getStackInSlot(i).isItemEqual(new ItemStack(Items.iron_pickaxe)))
+				if(Te.getStackInSlot(i).isItemEqual(new ItemStack(Items.IRON_PICKAXE)))
 				{
 					if(Te.getStackInSlot(i).getItemDamage() < Te.getStackInSlot(i).getMaxDamage())
 						Te.getStackInSlot(i).setItemDamage(Te.getStackInSlot(i).getItemDamage() + 1);

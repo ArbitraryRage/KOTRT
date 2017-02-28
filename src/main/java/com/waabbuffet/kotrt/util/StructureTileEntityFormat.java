@@ -1,6 +1,6 @@
 package com.waabbuffet.kotrt.util;
 
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 public class StructureTileEntityFormat {
 
