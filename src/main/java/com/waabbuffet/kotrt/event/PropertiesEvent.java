@@ -80,7 +80,7 @@ public class PropertiesEvent {
 		if(!event.getEntity().worldObj.isRemote)
 		{
 			
-			if(event.getSource().getEntity() instanceof EntityPlayer || event.getSource().getEntity() instanceof EntityArrow || event.getSource().getDamageType().toString().contains("magic") || event.source.getEntity() instanceof EntityBarracksWarrior || event.source.getEntity() instanceof EntityBarracksHunter)
+			if(event.getSource().getEntity() instanceof EntityPlayer || event.getSource().getEntity() instanceof EntityArrow || event.getSource().getDamageType().toString().contains("magic") || event.getSource().getEntity() instanceof EntityBarracksWarrior || event.getSource().getEntity() instanceof EntityBarracksHunter)
 			{
 				if(event.getEntity() instanceof EntityMob)
 				{
@@ -205,13 +205,13 @@ public class PropertiesEvent {
 			EntitySellShopKeeper b = (EntitySellShopKeeper) event.target;
 			ShopKeeperItemFormat SaleItems[] = new ShopKeeperItemFormat[100];
 			
-			SaleItems[0] = new ShopKeeperItemFormat(new ItemStack(Items.iron_ingot), 15);
+			SaleItems[0] = new ShopKeeperItemFormat(new ItemStack(Items.IRON_INGOT), 15);
 			SaleItems[1] = null;// gone
-			SaleItems[2] = new ShopKeeperItemFormat(new ItemStack(Items.coal), 8);
+			SaleItems[2] = new ShopKeeperItemFormat(new ItemStack(Items.COAL), 8);
 			SaleItems[3] = null;//gone
-			SaleItems[4] = new ShopKeeperItemFormat(new ItemStack(Items.gold_ingot), 30);
+			SaleItems[4] = new ShopKeeperItemFormat(new ItemStack(Items.GOLD_INGOT), 30);
 			
-			SaleItems[5] = new ShopKeeperItemFormat(new ItemStack(Items.diamond), 800); 
+			SaleItems[5] = new ShopKeeperItemFormat(new ItemStack(Items.DIAMOND), 800); 
 			SaleItems[6] = null; //gone
 			SaleItems[7] = new ShopKeeperItemFormat(new ItemStack(Items.redstone), 15);
 			SaleItems[8] = null; //gone
