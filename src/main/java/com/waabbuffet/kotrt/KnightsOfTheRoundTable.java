@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeChunkManager;
 import net.minecraftforge.common.ForgeChunkManager.Ticket;
@@ -77,7 +77,7 @@ public class KnightsOfTheRoundTable {
 		
 		
 		GameRegistry.registerWorldGenerator(new KotrtGenerator(), 9000);
-		GameRegistry.addShapedRecipe(new ItemStack(KotrtBlocksHandler.kingdom_structurebuilderblock), new Object[] {"ppp", "gdr","sss" ,'p',Blocks.PLANKS, 'r', Blocks.REDSTONE_BLOCK, 'g',  Blocks.GOLD_BLOCK, 'd',Items.DIAMOND, 's', Blocks.STONE});
+		GameRegistry.addShapedRecipe(new ItemStack(KotrtBlocksHandler.kingdom_structurebuilderblock), new Object[] {"ppp", "gdr","sss" ,'p',Blocks.planks, 'r', Blocks.redstone_block, 'g',  Blocks.gold_block, 'd',Items.diamond, 's', Blocks.stone});
 	
 		
 		
