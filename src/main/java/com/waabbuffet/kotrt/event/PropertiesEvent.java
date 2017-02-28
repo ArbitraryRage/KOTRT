@@ -77,20 +77,20 @@ public class PropertiesEvent {
 	@SubscribeEvent
 	public void onEntityLivingDeath(LivingDeathEvent event)
 	{
-		if(!event.entity.worldObj.isRemote)
+		if(!event.getEntity().worldObj.isRemote)
 		{
 			
-			if(event.source.getEntity() instanceof EntityPlayer || event.source.getEntity() instanceof EntityArrow || event.source.getDamageType().toString().contains("magic") || event.source.getEntity() instanceof EntityBarracksWarrior || event.source.getEntity() instanceof EntityBarracksHunter)
+			if(event.getSource().getEntity() instanceof EntityPlayer || event.getSource().getEntity() instanceof EntityArrow || event.getSource().getDamageType().toString().contains("magic") || event.source.getEntity() instanceof EntityBarracksWarrior || event.source.getEntity() instanceof EntityBarracksHunter)
 			{
-				if(event.entity instanceof EntityMob)
+				if(event.getEntity() instanceof EntityMob)
 				{
-						World world = event.entity.worldObj;
+						World world = event.getEntity().worldObj;
 						Random Rand = new Random();
 						
 					for(int i =0; i < 20; i ++)
 					{
 							EntityGold g = new EntityGold(world, 1);
-							g.setPosition(event.entity.getPosition().getX(), event.entity.getPosition().getY(), event.entity.getPosition().getZ());
+							g.setPosition(event.getEntity().getPosition().getX(), event.getEntity().getPosition().getY(), event.getEntity().getPosition().getZ());
 							
 						switch(Rand.nextInt(4)){
 						case 1:

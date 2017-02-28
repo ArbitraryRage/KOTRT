@@ -413,12 +413,12 @@ public class WheatFarmerAI extends EntityAIBase {
 										
 									
 										this.getTE().inventory[j].stackSize--;
-										World.setBlockState(SeedBlocks.get(ListIndex).up(), Blocks.wheat.getDefaultState());
+										World.setBlockState(SeedBlocks.get(ListIndex).up(), Blocks.WHEAT.getDefaultState());
 										
 										
 									}else{
 										this.getTE().inventory[j] = null;
-										World.setBlockState(SeedBlocks.get(ListIndex).up(), Blocks.wheat.getDefaultState());
+										World.setBlockState(SeedBlocks.get(ListIndex).up(), Blocks.WHEAT.getDefaultState());
 									}
 									 
 									// if(this.Inventory[j].stackSize > 0){
@@ -480,15 +480,15 @@ public class WheatFarmerAI extends EntityAIBase {
 							 if(this.getTE().inventory[j] == null)
 							 {
 								 	
-									World.setBlockState(WheatBlocks.get(ListIndex), Blocks.air.getDefaultState());
-									World.setBlockState(WheatBlocks.get(ListIndex).down(), Blocks.dirt.getDefaultState());
+									World.setBlockState(WheatBlocks.get(ListIndex), Blocks.AIR.getDefaultState());
+									World.setBlockState(WheatBlocks.get(ListIndex).down(), Blocks.DIRT.getDefaultState());
 									this.HoeMode = false;
 									
 									for(int k = 0; k < this.getTE().inventory.length; k ++)
 									 {
 										 if(this.getTE().inventory[k] != null)
 										 {
-											if(this.getTE().inventory[k].isItemEqual(new ItemStack(Items.wheat)))
+											if(this.getTE().inventory[k].isItemEqual(new ItemStack(Items.WHEAT)))
 											{
 												if(this.getTE().inventory[k].stackSize < 64)
 												{
@@ -537,7 +537,7 @@ public class WheatFarmerAI extends EntityAIBase {
 								 {
 									 if(this.getTE().inventory[j2] == null)
 									 {
-										 this.getTE().inventory[j2] = new ItemStack(Items.wheat);
+										 this.getTE().inventory[j2] = new ItemStack(Items.WHEAT);
 										 PlaceWheat = false;
 										 break;
 									 }

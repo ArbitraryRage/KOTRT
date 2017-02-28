@@ -342,7 +342,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 
 						if(MaterialList1.size() != 0 ){
 
-							if(!(B.equals(Blocks.air.getDefaultState()))){
+							if(!(B.equals(Blocks.AIR.getDefaultState()))){
 
 								if(AlreadyInTheList(MaterialList1, B))
 								{
@@ -473,7 +473,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 				}else {
 
 					this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock--;
-					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.air.getDefaultState();
+					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.AIR.getDefaultState();
 
 					if(this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock > 0)
 					{
@@ -497,7 +497,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 				}else {
 
 					this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock--;
-					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.air.getDefaultState();
+					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.AIR.getDefaultState();
 
 					if(this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock > 0)
 					{
@@ -518,7 +518,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 				}else {
 
 					this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock--;
-					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.air.getDefaultState();
+					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.AIR.getDefaultState();
 
 					if(this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock > 0)
 					{
@@ -540,7 +540,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 				}else {
 
 					this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock--;
-					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.air.getDefaultState();
+					this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.AIR.getDefaultState();
 
 					if(this.MaterialList1.get(this.CurrentBlockIndex).TotalNumberOfBlock > 0)
 					{
@@ -556,7 +556,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 			}
 
 			this.BlockCoolDown = 5;
-			this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.air.getDefaultState();
+			this.FullBlocks[pos.getX()][pos.getY()][pos.getZ()] = Blocks.AIR.getDefaultState();
 
 		}
 
@@ -668,7 +668,7 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 					//West: X: D Z: D 
 					//North: X: ^ Z: D
 
-					if(B.getBlock() != Blocks.air)
+					if(B.getBlock() != Blocks.AIR)
 					{
 
 						if(Direction.contains("East"))
@@ -835,29 +835,29 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 					{
 						if(this.BuildingDirection.contains("East"))
 						{
-							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x + 1, this.TileBlockPosY + y, this.TileBlockPosZ + z)) != Blocks.air.getDefaultState())
+							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x + 1, this.TileBlockPosY + y, this.TileBlockPosZ + z)) != Blocks.AIR.getDefaultState())
 							{
 
 								return true;
 							}else{
-								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x - 1, this.TileBlockPosY + y, this.TileBlockPosZ + z)) != Blocks.air.getDefaultState())
+								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x - 1, this.TileBlockPosY + y, this.TileBlockPosZ + z)) != Blocks.AIR.getDefaultState())
 								{
 
 									return true;
 								}else{
 
-									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y, this.TileBlockPosZ + z + 1)) != Blocks.air.getDefaultState())
+									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y, this.TileBlockPosZ + z + 1)) != Blocks.AIR.getDefaultState())
 									{
 
 
 										return true;
 									}else{
-										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y, this.TileBlockPosZ + z - 1)) != Blocks.air.getDefaultState())
+										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y, this.TileBlockPosZ + z - 1)) != Blocks.AIR.getDefaultState())
 										{
 
 											return true;
 										}else{
-											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y -1, this.TileBlockPosZ + z)) != Blocks.air.getDefaultState())
+											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + x, this.TileBlockPosY + y -1, this.TileBlockPosZ + z)) != Blocks.AIR.getDefaultState())
 											{
 
 												return true;
@@ -870,24 +870,24 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 							}
 						}else if(this.BuildingDirection.contains("West"))
 						{
-							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x + 1, this.TileBlockPosY + y, this.TileBlockPosZ - z)) != Blocks.air.getDefaultState())
+							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x + 1, this.TileBlockPosY + y, this.TileBlockPosZ - z)) != Blocks.AIR.getDefaultState())
 							{
 								return true;
 							}else{
-								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x - 1, this.TileBlockPosY + y, this.TileBlockPosZ - z)) != Blocks.air.getDefaultState())
+								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x - 1, this.TileBlockPosY + y, this.TileBlockPosZ - z)) != Blocks.AIR.getDefaultState())
 								{
 									return true;
 								}else{
 
-									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y, this.TileBlockPosZ - z + 1)) != Blocks.air.getDefaultState())
+									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y, this.TileBlockPosZ - z + 1)) != Blocks.AIR.getDefaultState())
 									{
 										return true;
 									}else{
-										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y, this.TileBlockPosZ - z - 1)) != Blocks.air.getDefaultState())
+										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y, this.TileBlockPosZ - z - 1)) != Blocks.AIR.getDefaultState())
 										{
 											return true;
 										}else{
-											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y -1, this.TileBlockPosZ - z)) != Blocks.air.getDefaultState())
+											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - x, this.TileBlockPosY + y -1, this.TileBlockPosZ - z)) != Blocks.AIR.getDefaultState())
 											{
 												return true;
 											}
@@ -899,24 +899,24 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 							}
 						}else if(this.BuildingDirection.contains("North"))
 						{
-							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z + 1, this.TileBlockPosY + y, this.TileBlockPosZ - x)) != Blocks.air.getDefaultState())
+							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z + 1, this.TileBlockPosY + y, this.TileBlockPosZ - x)) != Blocks.AIR.getDefaultState())
 							{
 								return true;
 							}else{
-								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z - 1, this.TileBlockPosY + y, this.TileBlockPosZ - x)) != Blocks.air.getDefaultState())
+								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z - 1, this.TileBlockPosY + y, this.TileBlockPosZ - x)) != Blocks.AIR.getDefaultState())
 								{
 									return true;
 								}else{
 
-									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y, this.TileBlockPosZ - x + 1)) != Blocks.air.getDefaultState())
+									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y, this.TileBlockPosZ - x + 1)) != Blocks.AIR.getDefaultState())
 									{
 										return true;
 									}else{
-										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y, this.TileBlockPosZ - x - 1)) != Blocks.air.getDefaultState())
+										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y, this.TileBlockPosZ - x - 1)) != Blocks.AIR.getDefaultState())
 										{
 											return true;
 										}else{
-											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y -1, this.TileBlockPosZ - x)) != Blocks.air.getDefaultState())
+											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX + z, this.TileBlockPosY + y -1, this.TileBlockPosZ - x)) != Blocks.AIR.getDefaultState())
 											{
 												return true;
 											}
@@ -928,24 +928,24 @@ public class TileEntityKingdomStructureBuilderBlock extends TileEntity implement
 							}
 						}else if(this.BuildingDirection.contains("South"))
 						{
-							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z + 1, this.TileBlockPosY + y, this.TileBlockPosZ + x)) != Blocks.air.getDefaultState())
+							if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z + 1, this.TileBlockPosY + y, this.TileBlockPosZ + x)) != Blocks.AIR.getDefaultState())
 							{
 								return true;
 							}else{
-								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z - 1, this.TileBlockPosY + y, this.TileBlockPosZ + x)) != Blocks.air.getDefaultState())
+								if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z - 1, this.TileBlockPosY + y, this.TileBlockPosZ + x)) != Blocks.AIR.getDefaultState())
 								{
 									return true;
 								}else{
 
-									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y, this.TileBlockPosZ + x + 1)) != Blocks.air.getDefaultState())
+									if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y, this.TileBlockPosZ + x + 1)) != Blocks.AIR.getDefaultState())
 									{
 										return true;
 									}else{
-										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y, this.TileBlockPosZ + x - 1)) != Blocks.air.getDefaultState())
+										if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y, this.TileBlockPosZ + x - 1)) != Blocks.AIR.getDefaultState())
 										{
 											return true;
 										}else{
-											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y -1, this.TileBlockPosZ + x)) != Blocks.air.getDefaultState())
+											if(this.worldObj.getBlockState(new BlockPos(this.TileBlockPosX - z, this.TileBlockPosY + y -1, this.TileBlockPosZ + x)) != Blocks.AIR.getDefaultState())
 											{
 												return true;
 											}

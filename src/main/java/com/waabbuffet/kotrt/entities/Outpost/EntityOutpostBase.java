@@ -513,23 +513,23 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 		case 4:
 			//Kill 15 zombies
 			
-			b = new QuestFormat(2,1, new EntityZombie(this.worldObj), new ItemStack(Items.apple));
+			b = new QuestFormat(2,1, new EntityZombie(this.worldObj), new ItemStack(Items.APPLE));
 			break;
 		case 5:
 			//Kill 16 Skeletons
-			b = new QuestFormat(2, 1, new EntitySkeleton(this.worldObj), new ItemStack(Items.apple));
+			b = new QuestFormat(2, 1, new EntitySkeleton(this.worldObj), new ItemStack(Items.APPLE));
 			break;
 		case 6:
 			//Kill 16 Spiders
-			b = new QuestFormat(2, 1, new EntitySpider(this.worldObj), new ItemStack(Items.apple));
+			b = new QuestFormat(2, 1, new EntitySpider(this.worldObj), new ItemStack(Items.APPLE));
 			break;
 		case 7:
 			//Kill 16 Creepers
-			b = new QuestFormat(3, 1, new EntityCreeper(this.worldObj), new ItemStack(Items.apple));
+			b = new QuestFormat(3, 1, new EntityCreeper(this.worldObj), new ItemStack(Items.APPLE));
 			break;
 		case 8:
 			//Deliver 16 apples to cow
-			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.apple, 16));
+			b = new QuestFormat(2, 1, new EntityOutpostBase(this.worldObj), new ItemStack(Items.APPLE, 16));
 			break;
 		case 9:
 			//Deliver cake to skeleton

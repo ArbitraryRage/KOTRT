@@ -156,7 +156,7 @@ public final class Structure {
 					for(int z = 0; z < ClientProxy.data.FullBlocks[0][0].length; z++) {
 						
 						
-						if(!ClientProxy.data.FullBlocks[x][y][z].equals(Blocks.air.getDefaultState())){
+						if(!ClientProxy.data.FullBlocks[x][y][z].equals(Blocks.AIR.getDefaultState())){
 							
 							cmp.setInteger(x + "," + y + "," + z, Block.getStateId(ClientProxy.data.FullBlocks[x][y][z]));
 							

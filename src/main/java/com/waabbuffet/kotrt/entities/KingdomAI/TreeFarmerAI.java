@@ -325,7 +325,7 @@ public class TreeFarmerAI extends EntityAIBase {
 								 {	 
 									
 									 this.Farmer.getNavigator().tryMoveToXYZ(HarvestBlocks.get(ListIndex).getX() + 2 + rand.nextInt(2), HarvestBlocks.get(ListIndex).getY(), HarvestBlocks.get(ListIndex).getZ() + rand.nextInt(2) + 1, 1.0D);
-									 World.setBlockState(HarvestBlocks.get(ListIndex), Blocks.air.getDefaultState());
+									 World.setBlockState(HarvestBlocks.get(ListIndex), Blocks.AIR.getDefaultState());
 									 
 									
 									 

@@ -69,48 +69,48 @@ public class MinerAI  extends EntityAIBase {
 					
 					//************************************************************//
 					// Floor two
-					PerfectMiningStructure[0][1][0] = Blocks.cobblestone_wall;
-					PerfectMiningStructure[1][1][0] = Blocks.cobblestone_wall;
-					PerfectMiningStructure[2][1][0] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][1][0] = Blocks.COBBLESTONE_WALL;
+					PerfectMiningStructure[1][1][0] = Blocks.COBBLESTONE_WALL;
+					PerfectMiningStructure[2][1][0] = Blocks.COBBLESTONE_WALL;
 					
-					PerfectMiningStructure[0][1][1] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][1][1] = Blocks.COBBLESTONE_WALL;
 					
-					PerfectMiningStructure[2][1][1] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[2][1][1] = Blocks.COBBLESTONE_WALL;
 					
 			//		PerfectMiningStructure[0][1][2] = Blocks.air;
-					PerfectMiningStructure[1][1][2] = Blocks.cobblestone_wall;
-					PerfectMiningStructure[2][1][2] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[1][1][2] = Blocks.COBBLESTONE_WALL;
+					PerfectMiningStructure[2][1][2] = Blocks.COBBLESTONE_WALL;
 					
-					PerfectMiningStructure[0][1][4] = Blocks.cobblestone_wall;
-					PerfectMiningStructure[1][1][4] = Blocks.cobblestone_wall;
-					PerfectMiningStructure[2][1][4] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][1][4] = Blocks.COBBLESTONE_WALL;
+					PerfectMiningStructure[1][1][4] = Blocks.COBBLESTONE_WALL;
+					PerfectMiningStructure[2][1][4] = Blocks.COBBLESTONE_WALL;
 					
-					PerfectMiningStructure[0][1][3] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][1][3] = Blocks.COBBLESTONE_WALL;
 					
-					PerfectMiningStructure[2][1][3] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[2][1][3] = Blocks.COBBLESTONE_WALL;
 					
 					//************************************************************//
 					// Floor three
 					
 				//	PerfectMiningStructure[0][2][0] = Blocks.air;
-					PerfectMiningStructure[1][2][0] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[1][2][0] = Blocks.COBBLESTONE_WALL;
 			//		PerfectMiningStructure[2][2][0] = Blocks.air;
 					
-					PerfectMiningStructure[0][2][1] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][2][1] = Blocks.COBBLESTONE_WALL;
 					PerfectMiningStructure[1][2][1] = Blocks.water;
-					PerfectMiningStructure[2][2][1] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[2][2][1] = Blocks.COBBLESTONE_WALL;
 					
 			//		PerfectMiningStructure[0][2][2] = Blocks.air;
-					PerfectMiningStructure[1][2][2] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[1][2][2] = Blocks.COBBLESTONE_WALL;
 			//		PerfectMiningStructure[2][2][2] = Blocks.air;
 					
 				//	PerfectMiningStructure[0][2][4] = Blocks.air;
-					PerfectMiningStructure[1][2][4] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[1][2][4] = Blocks.COBBLESTONE_WALL;
 			//		PerfectMiningStructure[2][2][4] = Blocks.air;
 					
-					PerfectMiningStructure[0][2][3] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[0][2][3] = Blocks.COBBLESTONE_WALL;
 					PerfectMiningStructure[1][2][3] = Blocks.lava;
-					PerfectMiningStructure[2][2][3] = Blocks.cobblestone_wall;
+					PerfectMiningStructure[2][2][3] = Blocks.COBBLESTONE_WALL;
 	}
 	
 	@Override
@@ -221,22 +221,22 @@ public class MinerAI  extends EntityAIBase {
 		
 		
 
-				if(World.getBlockState(this.Farmer.getWorkPlace().west()).equals(Blocks.air.getDefaultState()))
+				if(World.getBlockState(this.Farmer.getWorkPlace().west()).equals(Blocks.AIR.getDefaultState()))
 				{
-					if(World.getBlockState(this.Farmer.getWorkPlace().west().west()).equals(Blocks.air.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().west().west()).equals(Blocks.AIR.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().west().west().west()).equals(Blocks.stonebrick.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().west().west().west()).equals(Blocks.STONEBRICK.getDefaultState()))
 						{
 								b = "West";
 						}		
 					}
 				}
 				
-				if(World.getBlockState(this.Farmer.getWorkPlace().north()).equals(Blocks.air.getDefaultState()))
+				if(World.getBlockState(this.Farmer.getWorkPlace().north()).equals(Blocks.AIR.getDefaultState()))
 				{
-					if(World.getBlockState(this.Farmer.getWorkPlace().north().north()).equals(Blocks.air.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().north().north()).equals(Blocks.AIR.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().north().north().north()).equals(Blocks.stonebrick.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().north().north().north()).equals(Blocks.STONEBRICK.getDefaultState()))
 						{
 							
 								b = "North";
@@ -244,11 +244,11 @@ public class MinerAI  extends EntityAIBase {
 					}
 				}
 					
-					if(World.getBlockState(this.Farmer.getWorkPlace().south()).equals(Blocks.air.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().south()).equals(Blocks.AIR.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().south().south()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().south().south()).equals(Blocks.AIR.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().south().south().south()).equals(Blocks.stonebrick.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().south().south().south()).equals(Blocks.STONEBRICK.getDefaultState()))
 							{
 								
 									b = "South";
@@ -258,11 +258,11 @@ public class MinerAI  extends EntityAIBase {
 						
 		
 						
-						if(World.getBlockState(this.Farmer.getWorkPlace().east()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().east()).equals(Blocks.AIR.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().east().east()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().east().east()).equals(Blocks.AIR.getDefaultState()))
 							{
-								if(World.getBlockState(this.Farmer.getWorkPlace().east().east().east()).equals(Blocks.stonebrick.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().east().east().east()).equals(Blocks.STONEBRICK.getDefaultState()))
 								{
 									 
 										b = "East";
@@ -272,22 +272,22 @@ public class MinerAI  extends EntityAIBase {
 		
 		
 			
-				if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west()).equals(Blocks.cobblestone_wall.getDefaultState()))
+				if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west()).equals(Blocks.COBBLESTONE_WALL.getDefaultState()))
 				{
-					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west().west()).equals(Blocks.air.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west().west()).equals(Blocks.AIR.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west().west().west()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().west().west().west()).equals(Blocks.AIR.getDefaultState()))
 						{
 								b = "West";
 						}		
 					}
 				}
 				
-				if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north()).equals(Blocks.cobblestone_wall.getDefaultState()))
+				if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north()).equals(Blocks.COBBLESTONE_WALL.getDefaultState()))
 				{
-					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north().north()).equals(Blocks.air.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north().north()).equals(Blocks.AIR.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north().north().north()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().north().north().north()).equals(Blocks.AIR.getDefaultState()))
 						{
 							
 								b = "North";
@@ -295,11 +295,11 @@ public class MinerAI  extends EntityAIBase {
 					}
 				}
 					
-					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south()).equals(Blocks.cobblestone_wall.getDefaultState()))
+					if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south()).equals(Blocks.COBBLESTONE_WALL.getDefaultState()))
 					{
-						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south().south()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south().south()).equals(Blocks.AIR.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south().south().south()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().up().up().south().south().south()).equals(Blocks.AIR.getDefaultState()))
 							{
 								
 									b = "South";
@@ -310,11 +310,11 @@ public class MinerAI  extends EntityAIBase {
 			
 						
 						
-						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east()).equals(Blocks.cobblestone_wall.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east()).equals(Blocks.COBBLESTONE_WALL.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east().east()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east().east()).equals(Blocks.AIR.getDefaultState()))
 							{
-								if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east().east().east()).equals(Blocks.air.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().up().up().east().east().east()).equals(Blocks.AIR.getDefaultState()))
 								{
 									 
 										b = "East";
@@ -325,22 +325,22 @@ public class MinerAI  extends EntityAIBase {
 						
 						
 						
-						if(World.getBlockState(this.Farmer.getWorkPlace().west()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().west()).equals(Blocks.AIR.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().west().west()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().west().west()).equals(Blocks.AIR.getDefaultState()))
 							{
-								if(World.getBlockState(this.Farmer.getWorkPlace().west().west().west()).equals(Blocks.stonebrick.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().west().west().west()).equals(Blocks.STONEBRICK.getDefaultState()))
 								{
 										b = "West";
 								}		
 							}
 						}
 						
-						if(World.getBlockState(this.Farmer.getWorkPlace().north()).equals(Blocks.air.getDefaultState()))
+						if(World.getBlockState(this.Farmer.getWorkPlace().north()).equals(Blocks.AIR.getDefaultState()))
 						{
-							if(World.getBlockState(this.Farmer.getWorkPlace().north().north()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().north().north()).equals(Blocks.AIR.getDefaultState()))
 							{
-								if(World.getBlockState(this.Farmer.getWorkPlace().north().north().north()).equals(Blocks.stonebrick.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().north().north().north()).equals(Blocks.STONEBRICK.getDefaultState()))
 								{
 									
 										b = "North";
@@ -348,11 +348,11 @@ public class MinerAI  extends EntityAIBase {
 							}
 						}
 							
-							if(World.getBlockState(this.Farmer.getWorkPlace().south()).equals(Blocks.air.getDefaultState()))
+							if(World.getBlockState(this.Farmer.getWorkPlace().south()).equals(Blocks.AIR.getDefaultState()))
 							{
-								if(World.getBlockState(this.Farmer.getWorkPlace().south().south()).equals(Blocks.air.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().south().south()).equals(Blocks.AIR.getDefaultState()))
 								{
-									if(World.getBlockState(this.Farmer.getWorkPlace().south().south().south()).equals(Blocks.stonebrick.getDefaultState()))
+									if(World.getBlockState(this.Farmer.getWorkPlace().south().south().south()).equals(Blocks.STONEBRICK.getDefaultState()))
 									{
 										
 											b = "South";
@@ -362,11 +362,11 @@ public class MinerAI  extends EntityAIBase {
 								
 				
 								
-								if(World.getBlockState(this.Farmer.getWorkPlace().east()).equals(Blocks.air.getDefaultState()))
+								if(World.getBlockState(this.Farmer.getWorkPlace().east()).equals(Blocks.AIR.getDefaultState()))
 								{
-									if(World.getBlockState(this.Farmer.getWorkPlace().east().east()).equals(Blocks.air.getDefaultState()))
+									if(World.getBlockState(this.Farmer.getWorkPlace().east().east()).equals(Blocks.AIR.getDefaultState()))
 									{
-										if(World.getBlockState(this.Farmer.getWorkPlace().east().east().east()).equals(Blocks.stonebrick.getDefaultState()))
+										if(World.getBlockState(this.Farmer.getWorkPlace().east().east().east()).equals(Blocks.STONEBRICK.getDefaultState()))
 										{
 											 
 												b = "East";
