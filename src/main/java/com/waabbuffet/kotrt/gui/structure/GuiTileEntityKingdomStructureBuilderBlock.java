@@ -16,16 +16,16 @@ import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -203,9 +203,9 @@ public class GuiTileEntityKingdomStructureBuilderBlock  extends GuiContainer {
 								 
 							 }else {
 								 if(this.te.MaterialList1.get(i).Blockerino.toString().contains("water"))
-									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.water_bucket),  -115, 60 + 20*i);
+									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.WATER_BUCKET),  -115, 60 + 20*i);
 								 else{
-									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.lava_bucket),  -115, 60 + 20*i);
+									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.LAVA_BUCKET),  -115, 60 + 20*i);
 								 }
 							 }
 							 
@@ -218,9 +218,9 @@ public class GuiTileEntityKingdomStructureBuilderBlock  extends GuiContainer {
 								 
 							 }else {
 								 if(this.te.MaterialList1.get(i).Blockerino.toString().contains("water"))
-									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.water_bucket),  +95, 60 + 20* (i - 8));
+									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.WATER_BUCKET),  +95, 60 + 20* (i - 8));
 								 else{
-									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.lava_bucket),  +95, 60 + 20* (i - 8));
+									 itemRender.renderItemAndEffectIntoGUI(new ItemStack(Items.LAVA_BUCKET),  +95, 60 + 20* (i - 8));
 								 }
 							 }
 							 

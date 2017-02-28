@@ -25,7 +25,7 @@ public class ItemKingdomStructureStaff extends Item {
 	}
 	
 	
-	@Override
+	//@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumFacing side, float hitX,float hitY, float hitZ) {
 		
 		
@@ -34,7 +34,7 @@ public class ItemKingdomStructureStaff extends Item {
 	}
 	
 	
-	@Override
+	//@Override
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
 		
 		
@@ -42,7 +42,7 @@ public class ItemKingdomStructureStaff extends Item {
 	}
 	
 	
-	@Override
+	//@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		

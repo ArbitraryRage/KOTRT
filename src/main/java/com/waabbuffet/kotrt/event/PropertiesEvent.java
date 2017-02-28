@@ -213,71 +213,71 @@ public class PropertiesEvent {
 			
 			SaleItems[5] = new ShopKeeperItemFormat(new ItemStack(Items.DIAMOND), 800); 
 			SaleItems[6] = null; //gone
-			SaleItems[7] = new ShopKeeperItemFormat(new ItemStack(Items.redstone), 15);
+			SaleItems[7] = new ShopKeeperItemFormat(new ItemStack(Items.REDSTONE), 15);
 			SaleItems[8] = null; //gone
-			SaleItems[9] = new ShopKeeperItemFormat(new ItemStack(Items.quartz), 20);
+			SaleItems[9] = new ShopKeeperItemFormat(new ItemStack(Items.QUARTZ), 20);
 			
-			SaleItems[10] = new ShopKeeperItemFormat(new ItemStack(Items.bone), 6);
+			SaleItems[10] = new ShopKeeperItemFormat(new ItemStack(Items.BONE), 6);
 			SaleItems[11] = null;//gone
-			SaleItems[12] = new ShopKeeperItemFormat(new ItemStack(Items.spider_eye), 8);
+			SaleItems[12] = new ShopKeeperItemFormat(new ItemStack(Items.SPIDER_EYE), 8);
 			SaleItems[13] = null;//gone 
-			SaleItems[14] = new ShopKeeperItemFormat(new ItemStack(Items.gunpowder), 10);
+			SaleItems[14] = new ShopKeeperItemFormat(new ItemStack(Items.GUNPOWDER), 10);
 			
 			
 			
-			SaleItems[15] = new ShopKeeperItemFormat(new ItemStack(Items.rotten_flesh), 1);
+			SaleItems[15] = new ShopKeeperItemFormat(new ItemStack(Items.ROTTEN_FLESH), 1);
 			SaleItems[16] = null;// gone
-			SaleItems[17] = new ShopKeeperItemFormat(new ItemStack(Items.slime_ball), 25);
+			SaleItems[17] = new ShopKeeperItemFormat(new ItemStack(Items.SLIME_BALL), 25);
 			SaleItems[18] = null;//gone
-			SaleItems[19] = new ShopKeeperItemFormat(new ItemStack(Items.ender_pearl), 25);
+			SaleItems[19] = new ShopKeeperItemFormat(new ItemStack(Items.ENDER_PEARL), 25);
 			
-			SaleItems[20] = new ShopKeeperItemFormat(new ItemStack(Items.blaze_rod), 25); 
+			SaleItems[20] = new ShopKeeperItemFormat(new ItemStack(Items.BLAZE_ROD), 25); 
 			SaleItems[21] = null; //gone
-			SaleItems[22] = new ShopKeeperItemFormat(new ItemStack(Items.string), 4);
+			SaleItems[22] = new ShopKeeperItemFormat(new ItemStack(Items.STRING), 4);
 			SaleItems[23] = null; //gone
-			SaleItems[24] = new ShopKeeperItemFormat(new ItemStack(Items.feather), 4);
+			SaleItems[24] = new ShopKeeperItemFormat(new ItemStack(Items.FEATHER), 4);
 			
-			SaleItems[25] = new ShopKeeperItemFormat(new ItemStack(Items.leather), 20);
+			SaleItems[25] = new ShopKeeperItemFormat(new ItemStack(Items.LEATHER), 20);
 			SaleItems[26] = null;//gone
-			SaleItems[27] = new ShopKeeperItemFormat(new ItemStack(Items.ghast_tear), 200);
+			SaleItems[27] = new ShopKeeperItemFormat(new ItemStack(Items.GHAST_TEAR), 200);
 			SaleItems[28] = null;//gone 
-			SaleItems[29] = new ShopKeeperItemFormat(new ItemStack(Items.magma_cream), 50);
+			SaleItems[29] = new ShopKeeperItemFormat(new ItemStack(Items.MAGMA_CREAM), 50);
 			
-			SaleItems[30] = new ShopKeeperItemFormat(new ItemStack(Items.wheat), 2);
+			SaleItems[30] = new ShopKeeperItemFormat(new ItemStack(Items.WHEAT), 2);
 			SaleItems[31] = null;// gone
-			SaleItems[32] = new ShopKeeperItemFormat(new ItemStack(Items.carrot), 3);
+			SaleItems[32] = new ShopKeeperItemFormat(new ItemStack(Items.CARROT), 3);
 			SaleItems[33] = null;//gone
-			SaleItems[34] = new ShopKeeperItemFormat(new ItemStack(Items.potato), 3);
+			SaleItems[34] = new ShopKeeperItemFormat(new ItemStack(Items.POTATO), 3);
 			
 			SaleItems[35] = new ShopKeeperItemFormat(new ItemStack(Items.APPLE), 20); 
 			SaleItems[36] = null; //gone
-			SaleItems[37] = new ShopKeeperItemFormat(new ItemStack(Items.melon), 3);
+			SaleItems[37] = new ShopKeeperItemFormat(new ItemStack(Items.MELON), 3);
 			SaleItems[38] = null; //gone
-			SaleItems[39] = new ShopKeeperItemFormat(new ItemStack(Items.reeds), 2);
+			SaleItems[39] = new ShopKeeperItemFormat(new ItemStack(Items.REEDS), 2);
 			
-			SaleItems[40] = new ShopKeeperItemFormat(new ItemStack(Blocks.cactus), 4);
+			SaleItems[40] = new ShopKeeperItemFormat(new ItemStack(Blocks.CACTUS), 4);
 			SaleItems[41] = null;//gone
-			SaleItems[42] = new ShopKeeperItemFormat(new ItemStack(Items.cooked_fish), 21);
+			SaleItems[42] = new ShopKeeperItemFormat(new ItemStack(Items.COOKED_FISH), 21);
 			SaleItems[43] = null;//gone 
-			SaleItems[44] = new ShopKeeperItemFormat(new ItemStack(Items.cooked_chicken), 9);
+			SaleItems[44] = new ShopKeeperItemFormat(new ItemStack(Items.COOKED_CHICKEN), 9);
 			
-			SaleItems[45] = new ShopKeeperItemFormat(new ItemStack(Items.mushroom_stew), 15);
+			SaleItems[45] = new ShopKeeperItemFormat(new ItemStack(Items.MUSHROOM_STEW), 15);
 			SaleItems[46] = null;// gone
-			SaleItems[47] = new ShopKeeperItemFormat(new ItemStack(Items.wheat_seeds), 2);
+			SaleItems[47] = new ShopKeeperItemFormat(new ItemStack(Items.WHEAT_SEEDS), 2);
 			SaleItems[48] = null;//gone
-			SaleItems[49] = new ShopKeeperItemFormat(new ItemStack(Items.cooked_porkchop), 13);
+			SaleItems[49] = new ShopKeeperItemFormat(new ItemStack(Items.COOKED_PORKCHOP), 13);
 			
-			SaleItems[50] = new ShopKeeperItemFormat(new ItemStack(Blocks.yellow_flower), 2); 
+			SaleItems[50] = new ShopKeeperItemFormat(new ItemStack(Blocks.YELLOW_FLOWER), 2); 
 			SaleItems[51] = null; //gone
-			SaleItems[52] = new ShopKeeperItemFormat(new ItemStack(Blocks.red_flower), 2);
+			SaleItems[52] = new ShopKeeperItemFormat(new ItemStack(Blocks.RED_FLOWER), 2);
 			SaleItems[53] = null; //gone
-			SaleItems[54] = new ShopKeeperItemFormat(new ItemStack(Items.milk_bucket), 45);
+			SaleItems[54] = new ShopKeeperItemFormat(new ItemStack(Items.MILK_BUCKET), 45);
 			
-			SaleItems[55] = new ShopKeeperItemFormat(new ItemStack(Blocks.pumpkin), 10);
+			SaleItems[55] = new ShopKeeperItemFormat(new ItemStack(Blocks.PUMPKIN), 10);
 			SaleItems[56] = null;//gone
-			SaleItems[57] = new ShopKeeperItemFormat(new ItemStack(Items.pumpkin_pie), 15);
+			SaleItems[57] = new ShopKeeperItemFormat(new ItemStack(Items.PUMPKIN_PIE), 15);
 			SaleItems[58] = null;//gone 
-			SaleItems[59] = new ShopKeeperItemFormat(new ItemStack(Items.cake), 30);
+			SaleItems[59] = new ShopKeeperItemFormat(new ItemStack(Items.CAKE), 30);
 			
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntitySellKeeper(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj, SaleItems));
