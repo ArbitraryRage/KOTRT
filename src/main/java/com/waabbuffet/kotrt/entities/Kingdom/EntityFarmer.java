@@ -247,7 +247,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		
 
 	
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 200, TempHowMany, new ItemStack(Items.oak_door, 2))); //cost, craftingTime (Ticks), howMany, produced
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 200, TempHowMany, new ItemStack(Items.OAK_DOOR, 2))); //cost, craftingTime (Ticks), howMany, produced
 		
 			
 		
@@ -259,7 +259,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempItems[0] = new ItemStack(Blocks.PLANKS);
 		TempItems[1] = new ItemStack(Items.BOOK);
 	
-		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 320, TempHowMany, new ItemStack(Blocks.bookshelf, 2))); //cost, craftingTime (Ticks), howMany, produced
+		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 320, TempHowMany, new ItemStack(Blocks.BOOKSHELF, 2))); //cost, craftingTime (Ticks), howMany, produced
 		
 	
 	//Fences
@@ -271,7 +271,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempItems[1] = new ItemStack(Items.STICK);
 		
 		
-		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.oak_fence, 8)));
+		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.OAK_FENCE, 8)));
 	//Ladder
 		
 		TempHowMany[0] = 7; // sticks
@@ -279,7 +279,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempItems[0] = new ItemStack(Items.STICK);
 		
 	
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.ladder)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.LADDER)));
 	//Change Wood (0 = oak, 1 = spruce, 2 = birch, 3 = jungle, 4 = Acapaca, 5 = dark oak) logs are the same pattern
 		//oak into spruce
 			TempHowMany[0] = 1;
@@ -323,39 +323,39 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[0] = 6; // sticks
 		TempItems[0] = new ItemStack(Blocks.PLANKS);
 		
-		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.trapdoor)));
+		this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.TRAPDOOR)));
 
 
 		//Crafting Table
 		TempHowMany[0] = 4; // sticks
 		TempItems[0] = new ItemStack(Blocks.PLANKS);
 				
-		this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.crafting_table)));
+		this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.CRAFTING_TABLE)));
 		//leaves 
 		//oak leaves
 			TempHowMany[0] = 4; // sticks
-			TempItems[0] = new ItemStack(Blocks.sapling);
+			TempItems[0] = new ItemStack(Blocks.SAPLING);
 					
-			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.sapling, 4, 0)));
+			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.SAPLING, 4, 0)));
 		//Spruce leaves	
 			TempHowMany[0] = 4; // sticks
-			TempItems[0] = new ItemStack(Blocks.sapling, 1, 1);
+			TempItems[0] = new ItemStack(Blocks.SAPLING, 1, 1);
 					
-			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.sapling, 4, 1)));
+			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.SAPLING, 4, 1)));
 		//birch
 			TempHowMany[0] = 4; // sticks
-			TempItems[0] = new ItemStack(Blocks.sapling, 1, 2);
+			TempItems[0] = new ItemStack(Blocks.SAPLING, 1, 2);
 					
-			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.sapling, 4, 2)));
+			this.CraftingObjects.add( new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Blocks.SAPLING, 4, 2)));
 			
 		//books
 			TempHowMany[0] = 3; // Paper
 			TempHowMany[1] = 1; // leather
 			
-			TempItems[0] = new ItemStack(Items.paper);
-			TempItems[1] = new ItemStack(Items.leather);
+			TempItems[0] = new ItemStack(Items.PAPER);
+			TempItems[1] = new ItemStack(Items.LEATHER);
 					
-			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Items.book)));
+			this.CraftingObjects.add(new CraftingAIFormat(TempItems.clone(), 280, TempHowMany, new ItemStack(Items.BOOK)));
 		
 		return this.CraftingObjects;
 	
@@ -371,42 +371,42 @@ public class EntityFarmer extends EntityKingdomBase {
 		//****************************************************************//
 	//	Stone -> cooked stone
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.cobblestone);
+		TempItems[0] = new ItemStack(Blocks.COBBLESTONE);
 		
-		this.CraftingObjects.add(0, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.stone, 2)));
+		this.CraftingObjects.add(0, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.STONE, 2)));
 		
 //		Wood-> Charcoal
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.log);
+		TempItems[0] = new ItemStack(Blocks.LOG);
 			
-		this.CraftingObjects.add(1, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.coal, 1, 1)));
+		this.CraftingObjects.add(1, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.COAL, 1, 1)));
 		
 //		Sand -> Glass
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.sand);
+		TempItems[0] = new ItemStack(Blocks.SAND);
 			
-		this.CraftingObjects.add(2, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.glass, 2)));
+		this.CraftingObjects.add(2, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.GLASS, 2)));
 		
 //		Iron ore -> Iron
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.iron_ore);
+		TempItems[0] = new ItemStack(Blocks.IRON_ORE);
 			
 		this.CraftingObjects.add(3, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.IRON_INGOT, 2)));
 		
 //		Gold ore -> Gold
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.gold_ore);
+		TempItems[0] = new ItemStack(Blocks.GOLD_ORE);
 			
 		this.CraftingObjects.add(4, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.GOLD_INGOT, 2)));
 		
 //		Clay ore -> brick
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Items.clay_ball);
+		TempItems[0] = new ItemStack(Items.CLAY_BALL);
 			
 		this.CraftingObjects.add(5, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.BRICK, 2)));
 //		Clay block -> Harden
 		TempHowMany[0] = 1; // cobblestone
-		TempItems[0] = new ItemStack(Blocks.clay);
+		TempItems[0] = new ItemStack(Blocks.CLAY);
 			
 		this.CraftingObjects.add(6, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.HARDENED_CLAY, 2)));
 		
@@ -416,7 +416,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempHowMany[2] = 1; // iron
 		TempHowMany[3] = 1; // redstone
 		
-		TempItems[0] = new ItemStack(Blocks.cobblestone);
+		TempItems[0] = new ItemStack(Blocks.COBBLESTONE);
 		TempItems[1] = new ItemStack(Blocks.PLANKS);
 		TempItems[2] = new ItemStack(Items.IRON_INGOT);
 		TempItems[3] = new ItemStack(Items.REDSTONE);
@@ -441,12 +441,12 @@ public class EntityFarmer extends EntityKingdomBase {
 		TempItems[1] = new ItemStack(Items.IRON_INGOT);
 		TempItems[2] = new ItemStack(Items.REDSTONE);
 		
-		this.CraftingObjects.add(9, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.golden_rail, 9)));	
+		this.CraftingObjects.add(9, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Blocks.GOLDEN_RAIL, 9)));	
 //		Stone -> lava
 		TempHowMany[0] = 1; // Stone
-		TempItems[0] = new ItemStack(Blocks.stone);
+		TempItems[0] = new ItemStack(Blocks.STONE);
 			
-		this.CraftingObjects.add(10, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.lava_bucket, 1)));	
+		this.CraftingObjects.add(10, new CraftingAIFormat(TempItems.clone(), 40, TempHowMany, new ItemStack(Items.LAVA_BUCKET, 1)));	
 			
 	
 		return this.CraftingObjects;
@@ -471,9 +471,9 @@ public class EntityFarmer extends EntityKingdomBase {
 	        double d0 = this.posX;
 	        double d1 = this.posY;
 	        double d2 = this.posZ;
-	        this.posX = event.targetX;
-	        this.posY = event.targetY;
-	        this.posZ = event.targetZ;
+	        this.posX = event.getTargetX();
+	        this.posY = event.getTargetY();
+	        this.posZ = event.getTargetZ();
 	        boolean flag = false;
 	        BlockPos blockpos = new BlockPos(this.posX, this.posY, this.posZ);
 
@@ -486,7 +486,7 @@ public class EntityFarmer extends EntityKingdomBase {
 	                BlockPos blockpos1 = blockpos.down();
 	                Block block = this.worldObj.getBlockState(blockpos1).getBlock();
 
-	                if (block.getMaterial().blocksMovement())
+	                if (block.getMaterial(null).blocksMovement())
 	                {
 	                    flag1 = true;
 	                }
@@ -501,7 +501,7 @@ public class EntityFarmer extends EntityKingdomBase {
 	            {
 	                super.setPositionAndUpdate(this.posX, this.posY, this.posZ);
 
-	                if (this.worldObj.getCollidingBoundingBoxes(this, this.getEntityBoundingBox()).isEmpty() && !this.worldObj.isAnyLiquid(this.getEntityBoundingBox()))
+	                if (this.worldObj.getCollisionBoxes(this, this.getEntityBoundingBox()).isEmpty() && !this.worldObj.containsAnyLiquid(this.getEntityBoundingBox()))
 	                {
 	                    flag = true;
 	                }
@@ -529,8 +529,8 @@ public class EntityFarmer extends EntityKingdomBase {
 	                this.worldObj.spawnParticle(EnumParticleTypes.PORTAL, d3, d4, d5, (double)f, (double)f1, (double)f2, new int[0]);
 	            }
 
-	            this.worldObj.playSoundEffect(d0, d1, d2, "mob.endermen.portal", 1.0F, 1.0F);
-	            this.playSound("mob.endermen.portal", 1.0F, 1.0F);
+//	            this.worldObj.playSoundEffect(d0, d1, d2, "mob.endermen.portal", 1.0F, 1.0F);
+//	            this.playSound("mob.endermen.portal", 1.0F, 1.0F);
 	            return true;
 	        }
 	    }

@@ -118,36 +118,36 @@ public class PropertiesEvent {
 				}
 				//Quest Stuff
 				
-				if(event.entity instanceof EntityZombie)
+				if(event.getEntity() instanceof EntityZombie)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 4);
-				}else if(event.entity instanceof EntitySkeleton)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 4);
+				}else if(event.getEntity() instanceof EntitySkeleton)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 5);
-				}else if(event.entity instanceof EntitySpider)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 5);
+				}else if(event.getEntity() instanceof EntitySpider)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 6);
-				}else if(event.entity instanceof EntityCreeper)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 6);
+				}else if(event.getEntity() instanceof EntityCreeper)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 7);
-				}else if(event.entity instanceof EntityGhast)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 7);
+				}else if(event.getEntity() instanceof EntityGhast)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 18);
-				}else if(event.entity instanceof EntityPigZombie)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 18);
+				}else if(event.getEntity() instanceof EntityPigZombie)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 19);
-				}else if(event.entity instanceof EntitySheep)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 19);
+				}else if(event.getEntity() instanceof EntitySheep)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 20);
-				}else if(event.entity instanceof EntityCow)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 20);
+				}else if(event.getEntity() instanceof EntityCow)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 21);
-				}else if(event.entity instanceof EntityPig)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 21);
+				}else if(event.getEntity() instanceof EntityPig)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 22);
-				}else if(event.entity instanceof EntitySquid)
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 22);
+				}else if(event.getEntity() instanceof EntitySquid)
 				{
-					this.DecreaseQuestTracker(event.entity.worldObj, 23);
+					this.DecreaseQuestTracker(event.getEntity().worldObj, 23);
 				}
 				
 			}
@@ -179,27 +179,27 @@ public class PropertiesEvent {
 		{
 			EntityFarmer b = (EntityFarmer) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBase(event.entityPlayer, b, event.entityPlayer.worldObj));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBase(event.getEntityPlayer(), b, event.getEntityPlayer().worldObj));
 			
 		}else if(event.target instanceof EntityShopKeeper)
 		{
 
 			EntityShopKeeper b = (EntityShopKeeper) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityShopKeeper(b, event.entityPlayer, event.entityPlayer.worldObj, EntityShopKeeper.FillItemRegBlocks()));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityShopKeeper(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj, EntityShopKeeper.FillItemRegBlocks()));
 		}
 		else if(event.target instanceof EntityRecruiter)
 		{
 
 			EntityRecruiter b = (EntityRecruiter) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiRecruiter(event.entityPlayer, b, event.entityPlayer.worldObj));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiRecruiter(event.getEntityPlayer(), b, event.getEntityPlayer().worldObj));
 		}else if(event.target instanceof EntityOutpostBase)
 		{
 
 			EntityOutpostBase b = (EntityOutpostBase) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiOutpostBase(b, event.entityPlayer, event.entityPlayer.worldObj));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiOutpostBase(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
 		}else if(event.target instanceof EntitySellShopKeeper)
 		{
 			EntitySellShopKeeper b = (EntitySellShopKeeper) event.target;
@@ -280,19 +280,19 @@ public class PropertiesEvent {
 			SaleItems[59] = new ShopKeeperItemFormat(new ItemStack(Items.cake), 30);
 			
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntitySellKeeper(b, event.entityPlayer, event.entityPlayer.worldObj, SaleItems));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntitySellKeeper(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj, SaleItems));
 		}else if(event.target instanceof EntityBarracks)
 		{
 
 			EntityBarracks b = (EntityBarracks) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBarracks(b, event.entityPlayer, event.entityPlayer.worldObj));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityBarracks(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
 		}else if(event.target instanceof EntityCathedral)
 		{
 
 			EntityCathedral b = (EntityCathedral) event.target;
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityCathedral(b, event.entityPlayer, event.entityPlayer.worldObj));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiKingdomEntityCathedral(b, event.getEntityPlayer(), event.getEntityPlayer().worldObj));
 		}
 			
 		
@@ -350,22 +350,22 @@ public class PropertiesEvent {
 	@SubscribeEvent
 	public void onEntityConstructing(EntityConstructing e) {
 		
-	    if (e.entity instanceof EntityPlayer) {
-	        PlayerData.register((EntityPlayer) e.entity);
+	    if (e.getEntity() instanceof EntityPlayer) {
+	        PlayerData.register((EntityPlayer) e.getEntity());
 	    }
 	}
 
 	@SubscribeEvent
 	public void onEntityJoinWorld(EntityJoinWorldEvent e) {
 		
-	    if (e.entity instanceof EntityPlayer) {
-	        PlayerData.get((EntityPlayer) e.entity).syncMana();
+	    if (e.getEntity() instanceof EntityPlayer) {
+	        PlayerData.get((EntityPlayer) e.getEntity()).syncMana();
 	    }
 	    
-	    if(e.entity instanceof EntityFarmer)
+	    if(e.getEntity() instanceof EntityFarmer)
 	    {
-	    	EntityFarmer Entity =  (EntityFarmer) e.entity;
-	    	Entity.DetermineTasks(e.entity.worldObj);
+	    	EntityFarmer Entity =  (EntityFarmer) e.getEntity();
+	    	Entity.DetermineTasks(e.getEntity().worldObj);
 	    }
 	    
 	}
@@ -376,7 +376,7 @@ public class PropertiesEvent {
 	    NBTTagCompound nbt = new NBTTagCompound();
 	   
 	   
-	    PlayerData.get(e.original).saveReviveRelevantNBTData(nbt, e.wasDeath);
-	    PlayerData.get(e.entityPlayer).loadNBTData(nbt);
+	    PlayerData.get(e.getOriginal()).saveReviveRelevantNBTData(nbt, e.isWasDeath());
+	    PlayerData.get(e.getEntityPlayer()).loadNBTData(nbt);
 	}
 }
