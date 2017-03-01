@@ -2,9 +2,6 @@ package com.waabbuffet.kotrt.entities.Outpost;
 
 import com.waabbuffet.kotrt.util.QuestFormat;
 
-import scala.util.Random;
-import net.minecraft.client.Minecraft;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
@@ -12,9 +9,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIAttackRangedBow;
+import net.minecraft.entity.ai.EntityAIAttackRanged;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityCreeper;
@@ -29,21 +25,22 @@ import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.entity.passive.EntityTameable;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import scala.util.Random;
 
 public class EntityOutpostBase extends EntityTameable implements IRangedAttackMob{
 	
-	private EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow(this, 1.2D, 20, 20, 15.0F);
+	private EntityAIAttackRanged aiArrowAttack = new EntityAIAttackRanged(this, 1.2D, 20, 20, 15.0F);
     private EntityAIAttackMelee aiAttackOnCollide = new EntityAIAttackMelee(this, 1.2D, false);
 	
 	private int KingdomID, KingdomStructureID, QuestID, SingleReputation, QuestTimer, QuestObjectiveTracker;
@@ -128,11 +125,11 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 		{
 			if(villagerSkinID == 14)
 			{
-				this.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
+				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
 				this.tasks.addTask(4, this.aiArrowAttack);
 			}else{
 				
-				this.setCurrentItemOrArmor(0, new ItemStack(Items.GOLDEN_SWORD));
+				this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.GOLDEN_SWORD));
 				this.tasks.addTask(4, this.aiAttackOnCollide);
 			}
 			
@@ -873,7 +870,7 @@ public class EntityOutpostBase extends EntityTameable implements IRangedAttackMo
 
 	 public void attackEntityWithRangedAttack(EntityLivingBase p_82196_1_, float p_82196_2_)
 	    {
-	        EntityArrow entityarrow = new EntityArrow(this.worldObj, this, p_82196_1_, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
+	        EntityTippedArrow entityarrow = new EntityTippedArrow(this.worldObj, this);
 	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, this.getHeldItem(swingingHand));
 	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, this.getHeldItem(swingingHand));
 	        entityarrow.setDamage((double) 5.0);

@@ -9,7 +9,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -70,7 +70,7 @@ public class RenderGold extends Render<EntityGold>{
 	        float f7 = 0.3F;
 	        GlStateManager.scale(0.4F, 0.6F, 0.4F);
 	        Tessellator tessellator = Tessellator.getInstance();
-	        WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+	        VertexBuffer worldrenderer = tessellator.getBuffer();
 	        worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);
 	        worldrenderer.pos((double)(0.0F - f5), (double)(0.0F - f6), 0.0D).tex((double)f, (double)f3).color(200, 255, 200, 128).normal(0.0F, 1.0F, 0.0F).endVertex();
 	        worldrenderer.pos((double)(f4 - f5), (double)(0.0F - f6), 0.0D).tex((double)f1, (double)f3).color(200, 255, 200, 128).normal(0.0F, 1.0F, 0.0F).endVertex();

@@ -12,7 +12,7 @@ import com.waabbuffet.kotrt.tileEntities.structure.TileEntityKingdomStructureBui
 import com.waabbuffet.kotrt.util.BlockList;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;

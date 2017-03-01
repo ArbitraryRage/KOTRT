@@ -8,7 +8,7 @@ import com.waabbuffet.kotrt.references.SimpleReferences;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.VertexBuffer;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -79,7 +79,7 @@ public class RenderMagicBolt extends Render<EntityMagicBolt>
          float f7 = 0.3F;
          GlStateManager.scale(0.2F, 0.2F, 0.2F);
          Tessellator tessellator = Tessellator.getInstance();
-         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
+         VertexBuffer worldrenderer = tessellator.getBuffer();
          
          
          worldrenderer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);

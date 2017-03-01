@@ -5,6 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class StructureOulineBlock extends Block{
@@ -32,13 +33,13 @@ public class StructureOulineBlock extends Block{
 	
 	
 	@Override
-	public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock) {
+	public void onNeighborChange(IBlockAccess worldIn, BlockPos pos, BlockPos neighborBlock) {
 		if(this.DespawnBlock){
 			
 			this.DespawnBlock = false;
 			worldIn.setBlockToAir(pos);
 		}
-		super.onNeighborBlockChange(worldIn, pos, state, neighborBlock);
+		super.onNeighborChange(worldIn, pos, neighborBlock);
 	}
 
 }

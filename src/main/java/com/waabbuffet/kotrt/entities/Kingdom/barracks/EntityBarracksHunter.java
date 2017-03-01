@@ -8,7 +8,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
-import net.minecraft.entity.ai.EntityAIAttackRangedBow;
+import net.minecraft.entity.ai.EntityAIAttackRanged;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -18,16 +18,17 @@ import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityTameable;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.Enchantments;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
 public class EntityBarracksHunter extends EntityTameable implements IRangedAttackMob
 {
-    private EntityAIAttackRangedBow aiArrowAttack = new EntityAIAttackRangedBow((Entity)this, 0.6D, 20, 20, 15.0F);
+    private EntityAIAttackRanged aiArrowAttack = new EntityAIAttackRanged(this, 0.6D, 20, 20, 15.0F);
   
     
     private static final String __OBFID = "CL_00001697";
@@ -46,7 +47,7 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
 	    this.targetTasks.addTask(5, new EntityAIHurtByTarget(this, false));
 	      
 	    
-	    this.setCurrentItemOrArmor(0, new ItemStack(Items.BOW));
+	    this.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
         this.tasks.addTask(4, this.aiArrowAttack);
         
         
@@ -85,9 +86,9 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
         }
     }
 
-    public void setCurrentItemOrArmor(int p_70062_1_, ItemStack p_70062_2_)
+    public void setItemStackToSlot(EntityEquipmentSlot p_70062_1_, ItemStack p_70062_2_)
     {
-        super.setCurrentItemOrArmor(p_70062_1_, p_70062_2_);
+        super.setItemStackToSlot(p_70062_1_, p_70062_2_);
 
     }
     
@@ -111,7 +112,7 @@ public class EntityBarracksHunter extends EntityTameable implements IRangedAttac
 
 	 public void attackEntityWithRangedAttack(EntityLivingBase p_82196_1_, float p_82196_2_)
 	    {
-	        EntityArrow entityarrow = new EntityArrow(this.worldObj, this, p_82196_1_, 1.6F, (float)(14 - this.worldObj.getDifficulty().getDifficultyId() * 4));
+	        EntityTippedArrow entityarrow = new EntityTippedArrow(this.worldObj, this);
 	        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, this.getHeldItem(swingingHand));
 	        int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, this.getHeldItem(swingingHand));
 	        entityarrow.setDamage((double) 5.0);

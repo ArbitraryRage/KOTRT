@@ -74,6 +74,7 @@ public class EntityBarracksMage extends EntityTameable{
 					if(this.AttackCD == 0)
 					{
 					//	this.getOwner().getLastAttacker().setVelocity(0.0, 1.2, 0.0); save this for someone else
+						this.getOwner().getLastAttacker().addPotionEffect(new PotionEffect(Potion.getPotionById(2), 80, 4));
 						
 						//parent entity = ghast = this
 						//entitylivingbase = target

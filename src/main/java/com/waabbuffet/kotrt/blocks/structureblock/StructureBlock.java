@@ -16,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumWorldBlockLayer;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.world.World;
 
 public class StructureBlock extends Block implements ITileEntityProvider {
@@ -34,15 +34,15 @@ public class StructureBlock extends Block implements ITileEntityProvider {
 	
 		
 	@Override
-	public boolean isOpaqueCube() {
+	public boolean isOpaqueCube(IBlockState State) {
 	
 		return false;
 	}
 	
 	@Override
-	public EnumWorldBlockLayer getBlockLayer() {
+	public BlockRenderLayer getBlockLayer() {
 		
-		return EnumWorldBlockLayer.CUTOUT;
+		return BlockRenderLayer.CUTOUT;
 	}
 	
 	
@@ -68,8 +68,8 @@ public class StructureBlock extends Block implements ITileEntityProvider {
     }
 
     @Override
-    public boolean onBlockEventReceived(World worldIn, BlockPos pos, IBlockState state, int eventID, int eventParam) {
-        super.onBlockEventReceived(worldIn, pos, state, eventID, eventParam);
+    public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+        super.eventReceived(state,worldIn, pos, eventID, eventParam);
        
         
         TileEntity tileentity = worldIn.getTileEntity(pos);

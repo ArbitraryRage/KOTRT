@@ -76,7 +76,7 @@ public class EntityFarmer extends EntityKingdomBase {
 		
 		this.setTamed(true);
 		this.setCustomNameTag("Villager");
-		this.getNavigator().setHeightRequirement(2F);
+		//this.getNavigator().setHeightRequirement(2F);
 		
 		this.DetermineTasks(worldObj);
 	}
